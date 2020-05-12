@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "70b26f0351354aa6a5ac544b5d837cc4",
+    "revision": "16caa960ea0a17b0f69e7ce1ca4c60e5",
     "url": "/crypto_redux_router/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crypto_redux_router/static/css/2.4181bbfd.chunk.css"
   },
   {
-    "revision": "3aaaf8b88e2ed811a9b3",
-    "url": "/crypto_redux_router/static/css/main.dd7dc225.chunk.css"
+    "revision": "96bf0bffb11d50684d0b",
+    "url": "/crypto_redux_router/static/css/main.1efd21fc.chunk.css"
   },
   {
     "revision": "8f37ae04201a6cf85775",
@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crypto_redux_router/static/js/3.c3db34ee.chunk.js"
   },
   {
-    "revision": "3aaaf8b88e2ed811a9b3",
+    "revision": "96bf0bffb11d50684d0b",
     "url": "/crypto_redux_router/static/js/main.e0e9fce4.chunk.js"
   },
   {

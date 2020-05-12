@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/crypto_redux_router/static/css/main.dd7dc225.chunk.css",
+    "main.css": "/crypto_redux_router/static/css/main.1efd21fc.chunk.css",
     "main.js": "/crypto_redux_router/static/js/main.e0e9fce4.chunk.js",
     "main.js.map": "/crypto_redux_router/static/js/main.e0e9fce4.chunk.js.map",
     "runtime-main.js": "/crypto_redux_router/static/js/runtime-main.9e9feaae.js",
@@ -11,10 +11,10 @@
     "static/js/3.c3db34ee.chunk.js": "/crypto_redux_router/static/js/3.c3db34ee.chunk.js",
     "static/js/3.c3db34ee.chunk.js.map": "/crypto_redux_router/static/js/3.c3db34ee.chunk.js.map",
     "index.html": "/crypto_redux_router/index.html",
-    "precache-manifest.bfec3fa503c6ad4ab2eaf14500253f89.js": "/crypto_redux_router/precache-manifest.bfec3fa503c6ad4ab2eaf14500253f89.js",
+    "precache-manifest.1b66f2c485aee848d0c20eba04d88ec3.js": "/crypto_redux_router/precache-manifest.1b66f2c485aee848d0c20eba04d88ec3.js",
     "service-worker.js": "/crypto_redux_router/service-worker.js",
     "static/css/2.4181bbfd.chunk.css.map": "/crypto_redux_router/static/css/2.4181bbfd.chunk.css.map",
-    "static/css/main.dd7dc225.chunk.css.map": "/crypto_redux_router/static/css/main.dd7dc225.chunk.css.map",
+    "static/css/main.1efd21fc.chunk.css.map": "/crypto_redux_router/static/css/main.1efd21fc.chunk.css.map",
     "static/js/2.41fea84c.chunk.js.LICENSE.txt": "/crypto_redux_router/static/js/2.41fea84c.chunk.js.LICENSE.txt",
     "static/media/styles.css": "/crypto_redux_router/static/media/background.0424d5f5.jpg"
   },
@@ -22,7 +22,7 @@
     "static/js/runtime-main.9e9feaae.js",
     "static/css/2.4181bbfd.chunk.css",
     "static/js/2.41fea84c.chunk.js",
-    "static/css/main.dd7dc225.chunk.css",
+    "static/css/main.1efd21fc.chunk.css",
     "static/js/main.e0e9fce4.chunk.js"
   ]
 }
