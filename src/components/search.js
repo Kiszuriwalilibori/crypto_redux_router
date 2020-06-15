@@ -89,4 +89,5 @@ const mapStateToProps = (state) => ({
   search_results: state.search_results,
 });
 
-export const Search = withRouter(connect(mapStateToProps, mapDispatchToProps)(_Search));
+const Search = withRouter(connect(mapStateToProps, mapDispatchToProps)(_Search));
+export default Search;
