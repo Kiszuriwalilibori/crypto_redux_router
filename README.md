@@ -60,5 +60,5 @@ CryptoCurrency Tracker
 - more action on error no data for currency,
 - dynamic path indicating currency
 - 5s or current timeout visible timer
-
+- sometimes very long prices (petrodolad ) destroy table
 

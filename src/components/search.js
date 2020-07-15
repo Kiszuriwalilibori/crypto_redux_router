@@ -1,9 +1,9 @@
 
 import React from 'react';
 import MySelect from './select';
-import {validate_and_get_historical_data} from '../complexfunctions/validatehistorical';
-import getListOfAvailableCryptos from '../complexfunctions/getlistofcoins';
-import getCurrentCryptoPrice from '../complexfunctions/getcurrentprice';
+import {validate_and_get_historical_data} from '../js/complexfunctions/validatehistorical';
+import getListOfAvailableCryptos from '../js/complexfunctions/getlistofcoins';
+import getCurrentCryptoPrice from '../js/complexfunctions/getcurrentprice';
 import {Container, Button, ValidationAlert} from './details';
 import {useEffect } from 'react';
 import { withRouter } from "react-router";
@@ -16,7 +16,7 @@ import {
   send_error, 
   send_current,  
   clear_search_results,
-} from '../actions';
+} from '../js/actions';
 
 var Loop;
 //do rozważenia przenieść mniej więcej wszystk z clearloop do tego co się wykonuje po mount

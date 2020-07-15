@@ -5,7 +5,6 @@ const linkToListOfAllCryptos = 'https://min-api.cryptocompare.com/data/all/coinl
 
 var toPairs = require('lodash/toPairs');
 
-
 const extractListOfCryptos = (obj)=>{
     let data = obj.data.Data; 
     for(var item in data){if (data.hasOwnProperty(item)){data[item] = (data[item]).CoinName;}}; 

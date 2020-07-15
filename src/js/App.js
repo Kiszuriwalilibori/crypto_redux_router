@@ -5,15 +5,12 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-// import {Spinner} from './components/details';
-// import {Search} from './components/search';
-// import {Error} from './components/error';
-import EmptyLoader from './components/emptyloader';
+import EmptyLoader from '../components/emptyloader';
 
-const DisplayData = lazy(() => import('./components/data'));
-const Error = lazy(()=>import('./components/error'));
-const Search = lazy(()=>import('./components/search'));
-const Spinner = lazy(()=>import('./components/spinner'));
+const DisplayData = lazy(() => import('../components/data'));
+const Error = lazy(()=>import('../components/error'));
+const Search = lazy(()=>import('../components/search'));
+const Spinner = lazy(()=>import('../components/spinner'));
 
 function App() {
   return (

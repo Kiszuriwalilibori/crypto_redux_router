@@ -1,7 +1,5 @@
 import {formatResult, getPercentChange} from '../functions';
 
-
-
 const CryptoData = class {
 
     constructor (data){

@@ -5,10 +5,10 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import reducer from './reducer';
+import reducer from './js/reducer';
 import Axios from 'axios';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import App from './js/App';
+import * as serviceWorker from './js/serviceWorker';
 import GlobalStyle from './styles/globals';
 import './styles/styles.css';
 
