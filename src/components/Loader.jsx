@@ -28,13 +28,11 @@ const ColorCircularProgress = withStyles({
     },
 })(CircularProgress);
 
-  
-
-const _Spinner = React.memo(()=> {
+const _Loader = React.memo(()=> {
 
 return <ContainerVerticallyCentered><ColorCircularProgress thickness ={5} size ={100} /></ContainerVerticallyCentered>
 
 })
 
-const Spinner = withRouter(_Spinner);
-export default Spinner;
+const Loader = withRouter(_Loader);
+export default Loader;

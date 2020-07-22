@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Cell = styled.div`
+export const PriceTableCell = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -79,7 +79,7 @@ const GeneralInfoAlt = styled.div`
     background: url(${parasol});
   }`
   
-const _GeneralInfo = React.memo((props)=> {
+const _CryptoCurrencyGeneralInfo = React.memo((props)=> {
   const {value} = props;
     
   return(
@@ -98,8 +98,8 @@ const mapStateToProps = (state) => ({
   value: state.currentCryptoName,
 });
      
-const GeneralInfo = connect(mapStateToProps, null)(_GeneralInfo);
-export default GeneralInfo;
+const CryptoCurrencyGeneralInfo = connect(mapStateToProps, null)(_CryptoCurrencyGeneralInfo);
+export default CryptoCurrencyGeneralInfo;
   
   
   

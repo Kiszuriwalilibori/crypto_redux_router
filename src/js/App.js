@@ -5,12 +5,12 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import EmptyLoader from '../components/emptyloader';
+import EmptyLoader from '../components/EmptyLoader';
 
-const DisplayData = lazy(() => import('../components/data'));
-const Error = lazy(()=>import('../components/error'));
-const Search = lazy(()=>import('../components/search'));
-const Spinner = lazy(()=>import('../components/spinner'));
+const Results = lazy(() => import('../components/Results'));
+const Error = lazy(()=>import('../components/ErrorMessage'));
+const SearchSection = lazy(()=>import('../components/SearchSection'));
+const Loader = lazy(()=>import('../components/Loader'));
 
 function App() {
   return (
@@ -18,17 +18,17 @@ function App() {
     <Switch>
       <Route exact  path = "/">
         <Suspense fallback={EmptyLoader()}>
-          <Search />
+          <SearchSection />
         </Suspense>
       </Route>
       <Route path = "/results">
         <Suspense fallback={EmptyLoader()}>
-          <DisplayData /> 
+          <Results /> 
         </Suspense>  
       </Route>
       <Route path = "/connecting">
         <Suspense fallback={EmptyLoader()}> 
-          <Spinner />
+          <Loader />
         </Suspense>   
       </Route>
       <Route path = "/error">

@@ -1,6 +1,6 @@
 import {connect} from'react-redux';
 import styled from 'styled-components';
-import {Cell} from './cell';
+import {PriceTableCell} from './PriceTableCell';
 import * as React from 'react';
 
 const CurrentPriceValue =styled.div`
@@ -12,15 +12,14 @@ const CurrentPriceValue =styled.div`
 const CurrentPriceName =styled.div`
   font-size: 10px;`;
 
-
-const _CurrentPrice =(props)=>{
+const _CryptoCurrencyCurrentPrice =(props)=>{
     const {current_price} =props;
 
     return(
-    current_price?<Cell>
+    current_price?<PriceTableCell>
                     <CurrentPriceValue>{Object.values(current_price)[0]}</CurrentPriceValue>
                     <CurrentPriceName>{Object.keys(current_price)[0]}</CurrentPriceName>
-                  </Cell>:null
+                  </PriceTableCell>:null
     )
 }
 
@@ -28,8 +27,8 @@ const mapStateToProps = (state) => ({
     current_price:state.first_content,
   });
 
-const CurrentPrice = connect(mapStateToProps, null)(_CurrentPrice);
-export default CurrentPrice;
+const CryptoCurrencyCurrentPrice = connect(mapStateToProps, null)(_CryptoCurrencyCurrentPrice);
+export default CryptoCurrencyCurrentPrice;
   
   
 

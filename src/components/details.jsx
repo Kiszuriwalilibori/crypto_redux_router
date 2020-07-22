@@ -29,14 +29,7 @@ export const Container = withStyles({
       },
     })(Container);
     
-
-
-
-
-
-
-
-  export const CryptoContainer = withStyles({
+  export const CryptoCurrencyContainer = withStyles({
     root:{
       
       width: '100%',
@@ -46,10 +39,6 @@ export const Container = withStyles({
       marginLeft: 'auto',
     },
     })(Box);
-    
-  
-
-
 
 const ColorCircularProgress = withStyles({
     root: {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import {Cell} from './cell';
+import {PriceTableCell} from './PriceTableCell';
 import styled from 'styled-components';
 import oko from '../graphics/oko.png';
 import waga from '../graphics/waga.png';
@@ -53,20 +53,19 @@ height: 75px;
     background: url(${oko_hover});}
 `
 
-
-const Invest =()=> {
+const InvestButton =()=> {
 
   return( 
     
-      <Cell>
+      <PriceTableCell>
       <InvestWrapper>
       <Button variant="contained" color="secondary" size = 'small'>
         Inwestuj
       </Button>
       </InvestWrapper>
-      </Cell>
+      </PriceTableCell>
      
   )}
 
-  export default Invest;
+  export default InvestButton;
          

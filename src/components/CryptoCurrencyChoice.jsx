@@ -8,7 +8,7 @@ import {connect} from'react-redux';
 
 const createOption =(ary)=>{const result = {}; result.value = ary[0];result.label = ary[1]; return result;}
 
-const _Select = (props)=>{
+const _CryptoCurrencyChoice = (props)=>{
     
     const {cryptos, selected_crypto, send_selected_crypto} = props;
     const select_options = cryptos.map(createOption);
@@ -37,5 +37,5 @@ const  mapDispatchToProps = (dispatch) => ({
     send_selected_crypto: (data) => dispatch(send_selected_crypto(data)),
 });
 
-const MySelect = connect(mapStateToProps, mapDispatchToProps)(_Select);
- export default MySelect;
+const CryptoCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(_CryptoCurrencyChoice);
+export default CryptoCurrencyChoice;

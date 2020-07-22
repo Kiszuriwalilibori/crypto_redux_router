@@ -1,6 +1,6 @@
 
 import React from 'react';
-import MySelect from './select';
+import CryptoCurrencyChoice from './CryptoCurrencyChoice';
 import {validate_and_get_historical_data} from '../js/complexfunctions/validatehistorical';
 import getListOfAvailableCryptos from '../js/complexfunctions/getlistofcoins';
 import getCurrentCryptoPrice from '../js/complexfunctions/getcurrentprice';
@@ -8,9 +8,9 @@ import {Container, Button, ValidationAlert} from './details';
 import {useEffect } from 'react';
 import { withRouter } from "react-router";
 import {connect} from'react-redux';
-import {RadioButtonsGroup}from './radiogroup';
+import {BaseCurrencyChoice}from './BaseCurrencyChoice';
 import { useHistory } from 'react-router-dom';
-import LoadedCoinsMessage from './loadedcoinmessage';
+import LoadedCoinsMessage from './LoadedCoinsMessage';
 
 import {
   send_error, 
@@ -22,7 +22,7 @@ var Loop;
 //do rozważenia przenieść mniej więcej wszystk z clearloop do tego co się wykonuje po mount
 //////////////////////////////////////////////////////////////////////////////
 
-const _Search =(props) =>{
+const _SearchSection =(props) =>{
 
   const {
     search_results, 
@@ -68,8 +68,8 @@ const _Search =(props) =>{
   return(  
   <Container>
     <Button ID = 'Button' onClick ={proceed_validate}>Pokaż dane</Button>
-    <RadioButtonsGroup />
-    <MySelect />
+    <BaseCurrencyChoice />
+    <CryptoCurrencyChoice />
     <ValidationAlert />
     <LoadedCoinsMessage />
   </Container>);
@@ -89,5 +89,5 @@ const mapStateToProps = (state) => ({
   search_results: state.search_results,
 });
 
-const Search = withRouter(connect(mapStateToProps, mapDispatchToProps)(_Search));
-export default Search;
+const SearchSection = withRouter(connect(mapStateToProps, mapDispatchToProps)(_SearchSection));
+export default SearchSection;

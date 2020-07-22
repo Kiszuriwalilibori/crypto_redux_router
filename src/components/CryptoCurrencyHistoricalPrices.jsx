@@ -1,5 +1,5 @@
 import {connect} from'react-redux';
-import {Cell} from './cell';
+import {PriceTableCell} from './PriceTableCell';
 import * as React from 'react';
 import styled from 'styled-components';
 
@@ -9,17 +9,17 @@ const HistoricalValue = styled.div`
 const HistoricalName = styled.div`
     font-size: 10px;`
 
-const _HistoricalPrices =(props)=>{
+const _CryptoCurrencyHistoricalPrices =(props)=>{
 
 const {historicals} = props;
 
 return(
 
 historicals.map((element,index)=>
-    <Cell key ={index}>
+    <PriceTableCell key ={index}>
         <HistoricalValue key ={index} >{Object.values(element)[0]}</HistoricalValue>
         <HistoricalName key ={index+ 'x'}>{Object.keys(element)[0]}</HistoricalName>
-    </Cell>
+    </PriceTableCell>
   )
 )
 
@@ -29,7 +29,9 @@ const mapStateToProps = (state) => ({
     historicals:state.content,
 });
 
-const HistoricalPrices = connect(mapStateToProps, null)(_HistoricalPrices);
-export default HistoricalPrices;
+const 
+
+CryptoCurrencyHistoricalPrices = connect(mapStateToProps, null)(_CryptoCurrencyHistoricalPrices);
+export default CryptoCurrencyHistoricalPrices;
   
   

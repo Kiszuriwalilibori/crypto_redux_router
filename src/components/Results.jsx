@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import styled from 'styled-components';
-import GeneralInfo from'./generalinfo';
-import Invest from './invest';
+import CryptoCurrencyGeneralInfo from'./CryptoCurrencyGeneralInfo';
+import InvestButton from './InvestButton';
 import { withRouter } from "react-router";
 import {connect} from'react-redux';
-import {CryptoContainer, Button} from './details';
-import CurrentPrice from './currentprice';
-import HistoricalPrices from './historicals';
+import {CryptoCurrencyContainer, Button} from './details';
+import CryptoCurrencyCurrentPrice from './CryptoCurrencyCurrentPrice';
+import CryptoCurrencyHistoricalPrices from './CryptoCurrencyHistoricalPrices';
 import Grow from '@material-ui/core/Grow';
 
 //import PropTypes from 'prop-types';
@@ -19,7 +19,7 @@ const Controls = styled.div`
   justify-content:center;
   min-height:40vh`;
 
-const PricesContainer= styled.div` 
+const CryptoCurrencyPricesContainer= styled.div` 
   
   display:grid;
   width:100%;
@@ -42,7 +42,7 @@ const PricesContainer= styled.div`
 
 `
 
-const  _Data = (props)=>  {
+const  _Results = (props)=>  {
    
     const {content,clearLoop} = props;
    
@@ -53,18 +53,18 @@ content ?<React.Fragment>
     <Button onClick ={clearLoop} >Powrót do wyboru</Button>
   </Link>
 </Controls>
-<CryptoContainer>
+<CryptoCurrencyContainer>
   <Grow in={true} timeout ={1000}>
     <div className ='DataContainer'>
-      <GeneralInfo />
-      <PricesContainer>  
-        <CurrentPrice />
-        <HistoricalPrices />
-        <Invest />
-      </PricesContainer>
+      <CryptoCurrencyGeneralInfo />
+      <CryptoCurrencyPricesContainer>  
+        <CryptoCurrencyCurrentPrice />
+        <CryptoCurrencyHistoricalPrices />
+        <InvestButton />
+      </CryptoCurrencyPricesContainer>
     </div>
   </Grow>
-</CryptoContainer>
+</CryptoCurrencyContainer>
 </React.Fragment>:null    
 )}
 
@@ -74,5 +74,5 @@ const mapStateToProps = (state) => ({
     clearLoop: state.clear,
   });
   
-const DisplayData = withRouter(connect(mapStateToProps, null)(_Data));
-export default DisplayData;
+const Results = withRouter(connect(mapStateToProps, null)(_Results));
+export default Results;

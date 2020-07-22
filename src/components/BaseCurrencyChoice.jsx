@@ -53,4 +53,4 @@ const  mapDispatchToProps = (dispatch) => ({
   send_base_currency: (data) => dispatch(send_base_currency(data)),
 });
 
-export const RadioButtonsGroup = connect(mapStateToProps, mapDispatchToProps)(_RadioButtonsGroup);
+export const BaseCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(_RadioButtonsGroup);

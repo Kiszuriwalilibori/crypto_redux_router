@@ -30,7 +30,7 @@ const MyDialog = withStyles({
 })(Dialog);
 
 
-const _Error = ({error}) => (error)?
+const _ErrorMessage = ({error}) => (error)?
 
 <Link to='/' style={{ textDecoration: 'none' }} >
 
@@ -52,5 +52,5 @@ const mapStateToProps = (state) => ({
 });
 
 
-export const Error = withRouter(connect(mapStateToProps, null)(_Error));
+export const ErrorMessage = withRouter(connect(mapStateToProps, null)(_ErrorMessage));
 

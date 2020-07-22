@@ -16,7 +16,6 @@ export const store = createStore(reducer, applyMiddleware(thunk.withExtraArgumen
 
 ReactDOM.render(
 <Provider store={store}>
-    {/* <GlobalStyle />  */}
     <App />
 </Provider>, document.getElementById('root'));
 
