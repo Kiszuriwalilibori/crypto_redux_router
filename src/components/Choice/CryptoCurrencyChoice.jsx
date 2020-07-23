@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {send_selected_crypto} from '../js/actions';
+import {send_selected_crypto} from '../../js/actions';
 import "react-virtualized-select/styles.css";
 import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'

@@ -5,7 +5,7 @@ import CryptoCurrencyGeneralInfo from'./CryptoCurrencyGeneralInfo';
 import InvestButton from './InvestButton';
 import { withRouter } from "react-router";
 import {connect} from'react-redux';
-import {CryptoCurrencyContainer, Button} from './details';
+import {CryptoCurrencyContainer, Button} from '../details';
 import CryptoCurrencyCurrentPrice from './CryptoCurrencyCurrentPrice';
 import CryptoCurrencyHistoricalPrices from './CryptoCurrencyHistoricalPrices';
 import Grow from '@material-ui/core/Grow';

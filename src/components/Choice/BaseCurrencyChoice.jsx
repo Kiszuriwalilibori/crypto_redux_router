@@ -5,7 +5,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import {send_base_currency} from '../js/actions';
+import {send_base_currency} from '../../js/actions';
 import { withStyles } from '@material-ui/core/styles';
 
 const MyFormControl = withStyles({
@@ -43,7 +43,6 @@ const MyFormControl = withStyles({
     </MyFormControl>
   );
 }
-
 
 const mapStateToProps = (state) => ({  
 base_currency: state.base_currency,

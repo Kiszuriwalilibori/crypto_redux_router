@@ -1,22 +1,23 @@
 
 import React from 'react';
 import CryptoCurrencyChoice from './CryptoCurrencyChoice';
-import {validate_and_get_historical_data} from '../js/complexfunctions/validatehistorical';
-import getListOfAvailableCryptos from '../js/complexfunctions/getlistofcoins';
-import getCurrentCryptoPrice from '../js/complexfunctions/getcurrentprice';
-import {Container, Button, ValidationAlert} from './details';
+import {validate_and_get_historical_data} from '../../js/complexfunctions/validatehistorical';
+import getListOfAvailableCryptos from '../../js/complexfunctions/getlistofcoins';
+import getCurrentCryptoPrice from '../../js/complexfunctions/getcurrentprice';
+import {Container, Button} from '../details';
+import FailedValidationAlert from './FailedValidationAlert';
 import {useEffect } from 'react';
 import { withRouter } from "react-router";
 import {connect} from'react-redux';
 import {BaseCurrencyChoice}from './BaseCurrencyChoice';
 import { useHistory } from 'react-router-dom';
-import LoadedCoinsMessage from './LoadedCoinsMessage';
+import LoadedCoinsMessage from '../LoadedCoinsMessage';
 
 import {
   send_error, 
   send_current,  
   clear_search_results,
-} from '../js/actions';
+} from '../../js/actions';
 
 var Loop;
 //do rozważenia przenieść mniej więcej wszystk z clearloop do tego co się wykonuje po mount
@@ -70,7 +71,7 @@ const _SearchSection =(props) =>{
     <Button ID = 'Button' onClick ={proceed_validate}>Pokaż dane</Button>
     <BaseCurrencyChoice />
     <CryptoCurrencyChoice />
-    <ValidationAlert />
+    <FailedValidationAlert />
     <LoadedCoinsMessage />
   </Container>);
 

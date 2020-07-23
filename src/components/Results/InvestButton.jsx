@@ -2,10 +2,10 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import {PriceTableCell} from './PriceTableCell';
 import styled from 'styled-components';
-import oko from '../graphics/oko.png';
-import waga from '../graphics/waga.png';
-import waga_hover from '../graphics/wagahover.png';
-import oko_hover from '../graphics/okohover.png';
+import oko from '../../graphics/oko.png';
+import waga from '../../graphics/waga.png';
+import waga_hover from '../../graphics/wagahover.png';
+import oko_hover from '../../graphics/okohover.png';
 const InvestWrapper = styled.div`
 
 width: 109px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {connect} from'react-redux';
-import parasol from '../graphics/parasol.png';
+import parasol from '../../graphics/parasol.png';
 
 const GeneralInfoTitle = styled.div`
   

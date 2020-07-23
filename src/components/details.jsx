@@ -6,7 +6,6 @@ import { Alert, AlertTitle } from '@material-ui/lab';
 import Box from  '@material-ui/core/Box';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-
 import styled from 'styled-components';
 
 export const Container = withStyles({
@@ -46,8 +45,6 @@ const ColorCircularProgress = withStyles({
     },
   })(CircularProgress);
   
-
-
 const _Spinner = React.memo(()=> {
 
 return <ContainerVerticallyCentered><ColorCircularProgress thickness ={5} size ={100} /></ContainerVerticallyCentered>
@@ -55,7 +52,6 @@ return <ContainerVerticallyCentered><ColorCircularProgress thickness ={5} size =
 })
 
 export const Spinner = withRouter(_Spinner);
-
 
 export const Button = styled.button`
     display:block;
@@ -102,59 +98,3 @@ export const Button = styled.button`
     &:focus {outline:none;}
   
 `
-
-const StyledAlert = withStyles({
-  root: {
-    background: '#FADC53',
-    color: '#f44336',
-    margin: '40px auto',
-    fontWeight: 'bold',
-    maxWidth: '300px',
-    boxShadow: 'inset 0 0 5px #1E1F26, 0 1px 2px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.07), 0 8px 16px rgba(0,0,0,0.07), 0 16px 32px rgba(0,0,0,0.07), 0 32px 64px rgba(0,0,0,0.07)',
-  },
-  },
-)(Alert);
-
-
-export const MyAlert = ({visible, message})=> {
-  
-  return (visible? <StyledAlert severity="error">
-                              <AlertTitle>
-                                Uwaga!!!
-                              </AlertTitle>
-                              {message}
-                            </ StyledAlert>:null
-        );
-}
-
-
-let mapStateToProps = (state) => ({  
-  visible: state.validation_alert_visibility,
-  message:'Nie wybrano waluty, kryptowaluty albo obu',
-});
-
-
-export const ValidationAlert = connect(mapStateToProps, null)(MyAlert);
-   
-
-
-
-
-
-
-// const _SearchButton =(props)=>{ 
-
-// const {trigger_alert, send_choice, state_full} = props;
-
-// if(state_full()){console.log('statefull')} else trigger_alert();
-
-// return(<Button ID = 'Button' onClick ={state_full}>Pokaż dane</Button> )
-
-// }
-
-// const mapDispatchToProps = (dispatch) => ({
-//   trigger_alert: () => dispatch(trigger_alert),
-//   send_choice: (choice)=>dispatch(send_choice(choice)),
-// });
-
-// export const SearchButton = connect(null, mapDispatchToProps)(_SearchButton);

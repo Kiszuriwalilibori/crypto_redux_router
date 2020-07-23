@@ -7,9 +7,9 @@ import {
 } from "react-router-dom";
 import EmptyLoader from '../components/EmptyLoader';
 
-const Results = lazy(() => import('../components/Results'));
+const Results = lazy(() => import('../components/Results/Results'));
 const Error = lazy(()=>import('../components/ErrorMessage'));
-const SearchSection = lazy(()=>import('../components/SearchSection'));
+const SearchSection = lazy(()=>import('../components/Choice/SearchSection'));
 const Loader = lazy(()=>import('../components/Loader'));
 
 function App() {
