@@ -1,6 +1,6 @@
-import * as actions from './actions';
-import CryptoData from './complexfunctions/cryptodata';
-import {link,createObject} from './functions';
+import * as actions from '../ACTIONS/actions';
+import CryptoData from '../FUNCTIONS/cryptoData';
+import {link,createObject} from '../FUNCTIONS/functions';
 const initialState = {
     list_of_all_cryptos:[],
     list_of_all_cryptos_is_loaded:false,
@@ -98,10 +98,7 @@ const reducer = (state = initialState, action) => {
                         currentCryptoName:action.payload[2], 
                         first_content: first_content,
                     }   
-            }
-
-
-            
+            }   
         default:
         return state;
     }

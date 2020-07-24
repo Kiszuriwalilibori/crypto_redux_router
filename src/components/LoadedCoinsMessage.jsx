@@ -3,7 +3,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import { Alert} from '@material-ui/lab';
 import { withStyles} from '@material-ui/core/styles';
 import {connect} from'react-redux';
-import {hide_loaded_coins_msg} from '../js/actions';
+import {hide_loaded_coins_msg} from '../js/ACTIONS/actions';
 
 const MyAlert = withStyles({
   root: {

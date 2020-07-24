@@ -5,12 +5,12 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import EmptyLoader from '../components/EmptyLoader';
+import EmptyLoader from './EmptyLoader';
 
-const Results = lazy(() => import('../components/Results/Results'));
-const Error = lazy(()=>import('../components/ErrorMessage'));
-const SearchSection = lazy(()=>import('../components/Choice/SearchSection'));
-const Loader = lazy(()=>import('../components/Loader'));
+const Results = lazy(() => import('./Results/Results'));
+const Error = lazy(()=>import('./ErrorMessage'));
+const SearchSection = lazy(()=>import('./Choice/SearchSection'));
+const Loader = lazy(()=>import('./Loader'));
 
 function App() {
   return (

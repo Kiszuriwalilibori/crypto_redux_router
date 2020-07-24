@@ -1,5 +1,5 @@
 
-import {send_error, send_list_of_all_cryptos, hide_loaded_coins_msg } from '../actions';
+import {send_error, send_list_of_all_cryptos, hide_loaded_coins_msg } from '../ACTIONS/actions';
 
 const linkToListOfAllCryptos = 'https://min-api.cryptocompare.com/data/all/coinlist';
 

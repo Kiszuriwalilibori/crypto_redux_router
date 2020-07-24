@@ -1,9 +1,9 @@
 
 import React from 'react';
 import CryptoCurrencyChoice from './CryptoCurrencyChoice';
-import {validate_and_get_historical_data} from '../../js/complexfunctions/validatehistorical';
-import getListOfAvailableCryptos from '../../js/complexfunctions/getlistofcoins';
-import getCurrentCryptoPrice from '../../js/complexfunctions/getcurrentprice';
+import {validate_and_get_historical_data} from '../../js/FUNCTIONS/validateAndGetHistoricalData';
+import getListOfAvailableCryptos from '../../js/FUNCTIONS/getListOfAvailableCryptos';
+import getCurrentCryptoPrice from '../../js/FUNCTIONS/getCurrentCryptoPrice';
 import {Container, Button} from '../details';
 import FailedValidationAlert from './FailedValidationAlert';
 import {useEffect } from 'react';
@@ -17,7 +17,7 @@ import {
   send_error, 
   send_current,  
   clear_search_results,
-} from '../../js/actions';
+} from '../../js/ACTIONS/actions';
 
 var Loop;
 //do rozważenia przenieść mniej więcej wszystk z clearloop do tego co się wykonuje po mount
@@ -45,8 +45,6 @@ const _SearchSection =(props) =>{
       search:()=>{history.push('/')}
     }),[],
   )
-
-
 
   function return_get_current_price(){return getCurrentCryptoPrice(search_results, redirect)};
   function proceed_validate(){return validate_and_get_historical_data(redirect, clearLoop)};

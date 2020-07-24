@@ -1,4 +1,4 @@
-import {formatResult, getPercentChange} from '../functions';
+import {formatResult, getPercentChange} from './functions';
 
 const CryptoData = class {
 
@@ -7,7 +7,6 @@ const CryptoData = class {
     this.currentPrice = Object.values(data)[0];
     }
   
-    
     complement = (newData)=>{
       this.data.push(...newData);
     }

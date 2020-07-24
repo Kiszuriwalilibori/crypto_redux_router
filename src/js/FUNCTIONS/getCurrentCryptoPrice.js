@@ -2,9 +2,9 @@
 import {
     send_error, 
     send_current,  
-  } from '../actions';
+  } from '../ACTIONS/actions';
 
-  import {link} from'../functions'; 
+  import {link} from'./functions'; 
 
 export default function getCurrentCryptoPrice(search_results,redirect) {
     return async (dispatch, getState, Axios)=>{

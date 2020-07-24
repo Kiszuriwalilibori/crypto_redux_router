@@ -1,5 +1,5 @@
-import {set_search_results, toggle_validation_alert_visibility, send_historical, send_error, clear_historical } from '../actions';
-import {timestamps, link, createObject} from '../functions';
+import {set_search_results, toggle_validation_alert_visibility, send_historical, send_error, clear_historical } from '../ACTIONS/actions';
+import {timestamps, link, createObject} from './functions';
 
 export function validate_and_get_historical_data (redirect, clear){return (dispatch, getState, Axios)=>{ 
   
