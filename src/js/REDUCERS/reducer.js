@@ -1,5 +1,5 @@
 import * as actions from '../ACTIONS/actions';
-import CryptoData from '../FUNCTIONS/cryptoData';
+import CryptoCurrencyData from '../FUNCTIONS/CryptoCurrencyData';
 import {link,createObject} from '../FUNCTIONS/functions';
 const initialState = {
     list_of_all_cryptos:[],
@@ -82,7 +82,7 @@ const reducer = (state = initialState, action) => {
 
             if (state.currentCryptoValue === null || state.currentCryptoValue != action.payload[1]){
                
-                const cryptoData = new CryptoData(createObject(link.currentPriceText, action.payload[1]));
+                const cryptoData = new CryptoCurrencyData(createObject(link.currentPriceText, action.payload[1]));
                 
                 cryptoData.complement([...state.historical]);
                 
