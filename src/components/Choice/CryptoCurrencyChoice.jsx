@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {send_selected_crypto} from '../../js/ACTIONS/actions';
+import {setSelectedCrypto} from '../../js/ACTIONS/actions';
 import "react-virtualized-select/styles.css";
 import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
@@ -8,9 +8,9 @@ import {connect} from'react-redux';
 
 const createOption =(ary)=>{const result = {}; result.value = ary[0];result.label = ary[1]; return result;}
 
-const _CryptoCurrencyChoice = (props)=>{
+const prepareCryptoCurrencyChoice = (props)=>{
     
-    const {cryptos, selected_crypto, send_selected_crypto} = props;
+    const {cryptos, selected_crypto, setSelectedCrypto} = props;
     const select_options = cryptos.map(createOption);
     
     return(
@@ -22,7 +22,7 @@ const _CryptoCurrencyChoice = (props)=>{
         placeholder = "Wybierz kryptowalutę"
         isClearable = {true}
         isSearchable ={true}
-        onChange ={(selectValue)=>{send_selected_crypto(selectValue)}}
+        onChange ={(selectValue)=>{setSelectedCrypto(selectValue)}}
         options = {select_options} />:null
     )
 }
@@ -34,8 +34,8 @@ const mapStateToProps = (state) => ({
   });
 
 const  mapDispatchToProps = (dispatch) => ({
-    send_selected_crypto: (data) => dispatch(send_selected_crypto(data)),
+    setSelectedCrypto: (data) => dispatch(setSelectedCrypto(data)),
 });
 
-const CryptoCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(_CryptoCurrencyChoice);
+const CryptoCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(prepareCryptoCurrencyChoice);
 export default CryptoCurrencyChoice;

@@ -5,7 +5,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import {send_base_currency} from '../../js/ACTIONS/actions';
+import {setBaseCurrency} from '../../js/ACTIONS/actions';
 import { withStyles } from '@material-ui/core/styles';
 
 const MyFormControl = withStyles({
@@ -27,15 +27,15 @@ const MyFormControl = withStyles({
 })(FormControl);
 
 
-  const _RadioButtonsGroup =(props)=> {
+  const prepareRadioButtonsGroup =(props)=> {
   
-  const{base_currency, send_base_currency} = props;
-  const handleChange = (event) => {send_base_currency(event.target.value);};
+  const{baseCurrency, setBaseCurrency} = props;
+  const handleChange = (event) => {setBaseCurrency(event.target.value);};
 
   return (
     <MyFormControl component="fieldset">
       <FormLabel component="legend">Waluta odniesienia</FormLabel>
-      <RadioGroup aria-label="currency" name="currency" value={base_currency} onChange={handleChange}>
+      <RadioGroup aria-label="currency" name="currency" value={baseCurrency} onChange={handleChange}>
         <FormControlLabel value="PLN" control={<Radio />} label="PLN" />
         <FormControlLabel value="USD" control={<Radio />} label="USD" />
         <FormControlLabel value="EUR" control={<Radio />} label="EUR" />
@@ -45,11 +45,11 @@ const MyFormControl = withStyles({
 }
 
 const mapStateToProps = (state) => ({  
-base_currency: state.base_currency,
+baseCurrency: state.baseCurrency,
 });
 
 const  mapDispatchToProps = (dispatch) => ({
-  send_base_currency: (data) => dispatch(send_base_currency(data)),
+  setBaseCurrency: (data) => dispatch(setBaseCurrency(data)),
 });
 
-export const BaseCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(_RadioButtonsGroup);
+export const BaseCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(prepareRadioButtonsGroup);

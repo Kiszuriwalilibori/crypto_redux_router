@@ -14,7 +14,7 @@ const StyledAlert = withStyles({
     },
 },)(Alert);
  
-const MyAlert = ({visible, message})=> {
+const prepareFailedValidationAlert = ({visible, message})=> {
     
   return (visible? <StyledAlert severity="error"><AlertTitle>Uwaga!!!</AlertTitle>{message}</ StyledAlert>:null);
 }
@@ -24,6 +24,6 @@ let mapStateToProps = (state) => ({
   message:'Nie wybrano waluty, kryptowaluty albo obu',
 });
 
-const FailedValidationAlert = connect(mapStateToProps, null)(MyAlert);
+const FailedValidationAlert = connect(mapStateToProps, null)(prepareFailedValidationAlert);
 export default FailedValidationAlert;
   

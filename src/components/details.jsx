@@ -1,55 +1,52 @@
-import * as React from 'react';
+import * as React from "react";
 import { withRouter } from "react-router";
-import {connect} from'react-redux';
-import { withStyles } from '@material-ui/core/styles';
-import { Alert, AlertTitle } from '@material-ui/lab';
-import Box from  '@material-ui/core/Box';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { withStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = withStyles({
-  root:{
-    margin:'0 auto', 
-    display:'flex', 
-    flexDirection: 'column', 
-    height:'100vh', 
-    alignItems: 'center', 
-    background:'transparent',
-    paddingTop:'10vh',
-    },
-  })(Box);
-  
+  root: {
+    margin: "0 auto",
+    display: "flex",
+    flexDirection: "column",
+    height: "100vh",
+    alignItems: "center",
+    background: "transparent",
+    paddingTop: "10vh",
+  },
+})(Box);
 
+export const ContainerVerticallyCentered = withStyles({
+  root: {
+    justifyContent: "center",
+  },
+})(Container);
 
-  export const ContainerVerticallyCentered = withStyles({
-    root:{ 
-      justifyContent: 'center',
-      },
-    })(Container);
-    
-  export const CryptoCurrencyContainer = withStyles({
-    root:{
-      
-      width: '100%',
-      paddingRight: '15px',
-      paddingLeft: '15px',
-      marginRight: 'auto',
-      marginLeft: 'auto',
-    },
-    })(Box);
+export const CryptoCurrencyContainer = withStyles({
+  root: {
+    width: "100%",
+    paddingRight: "15px",
+    paddingLeft: "15px",
+    marginRight: "auto",
+    marginLeft: "auto",
+  },
+})(Box);
 
 const ColorCircularProgress = withStyles({
-    root: {
-      color: 'rgba(122, 194, 33, 0.8);',
-    },
-  })(CircularProgress);
-  
-const _Spinner = React.memo(()=> {
+  root: {
+    color: "rgba(122, 194, 33, 0.8);",
+  },
+})(CircularProgress);
 
-return <ContainerVerticallyCentered><ColorCircularProgress thickness ={5} size ={100} /></ContainerVerticallyCentered>
-
-})
+const _Spinner = React.memo(() => {
+  return (
+    <ContainerVerticallyCentered>
+      <ColorCircularProgress thickness={5} size={100} />
+    </ContainerVerticallyCentered>
+  );
+});
 
 export const Spinner = withRouter(_Spinner);
 
@@ -97,4 +94,4 @@ export const Button = styled.button`
       box-shadow: inset 0 0 5px 2px #1a47a0, 0 1px 0 #eeeeee; }
     &:focus {outline:none;}
   
-`
+`;

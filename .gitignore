@@ -10,7 +10,7 @@
 
 # production
 /build
-
+/readme.pl
 # misc
 .DS_Store
 .env.local

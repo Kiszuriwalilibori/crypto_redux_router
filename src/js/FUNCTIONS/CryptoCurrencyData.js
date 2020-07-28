@@ -1,28 +1,29 @@
-import {formatResult, getPercentChange} from './functions';
+import { formatResult, getPercentChange } from "./functions";
 
 const CryptoCurrencyData = class {
-
-  constructor (data){
-  this.data = [data];
-  this.currentPrice = Object.values(data)[0];
+  constructor(data) {
+    this.data = [data];
+    this.currentPrice = Object.values(data)[0];
   }
-  
-  complement = (newData)=>{
+
+  complement = (newData) => {
     this.data.push(...newData);
-  }
-  
-  format =(text, referenceCoin)=>{ 
-      const x = formatResult(
-        this.data, 
-        text, 
-        this.currentPrice, 
-        getPercentChange, 
-        referenceCoin
-      );
-    this.data = x;
-  }
+  };
 
-  get getData (){return this.data};
-}
-  
+  format = (text, referenceCoin) => {
+    const x = formatResult(
+      this.data,
+      text,
+      this.currentPrice,
+      getPercentChange,
+      referenceCoin
+    );
+    this.data = x;
+  };
+
+  get getData() {
+    return this.data;
+  }
+};
+
 export default CryptoCurrencyData;

@@ -6,7 +6,6 @@ var toPairs = require('lodash/toPairs');
 
 //źle - pokazuje jedenastą sylwestra
 
-
 export const timestamps ={
 content:[
   ['1D',()=> getUnixTime(endOfYesterday())],

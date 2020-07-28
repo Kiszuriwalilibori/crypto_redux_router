@@ -1,125 +1,98 @@
-export const SEND_LIST_OF_ALL_CRYPTOS ='SEND_LIST_OF_ALL_CRYPTOS';
-export const SEND_ERROR ='SEND_ERROR';
-export const TRIGGER_ALERT ='TRIGGER_ALERT';
-export const SEND_HISTORICAL ='SEND_HISTORICAL';
-export const SEND_CURRENT ='SEND_CURRENT';
-export const HIDE_LOADED_COINS_MSG ='HIDE_LOADED_COINS_MSG';
-export const TOGGLE_VALIDATION_ALERT_VISIBILITY ='TOGGLE_VALIDATION_ALERT_VISIBILITY';
-export const CLEAR_HISTORICAL ='CLEAR_HISTORICAL';
-export const SEND_BASE_CURRENCY ='SEND CURRENCY';
-export const SEND_SELECTED_CRYPTO ='SEND_SELECTED_CRYPTO';
-export const SET_SEARCH_RESULTS ='SET_SEARCH_RESULTS';
-export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
+export const SEND_LIST_OF_ALL_CRYPTOS = "SEND_LIST_OF_ALL_CRYPTOS";
+export const REPORT_ERROR = "REPORT_ERROR";
+export const TRIGGER_ALERT = "TRIGGER_ALERT";
+export const SET_HISTORICAL_PRICES = "SET_HISTORICAL_PRICES";
+export const SET_CURRENT_PRICE = "SET_CURRENT_PRICE";
+export const HIDE_LOADED_COINS_MESSAGE = "HIDE_LOADED_COINS_MESSAGE";
+export const TOGGLE_VALIDATION_ALERT_VISIBILITY = "TOGGLE_VALIDATION_ALERT_VISIBILITY";
+export const CLEAR_HISTORICAL_PRICES = "CLEAR_HISTORICAL_PRICES";
+export const SET_BASE_CURRENCY = "SEND BASE CURRENCY";
+export const SET_SELECTED_CRYPTO = "SET_SELECTED_CRYPTO";
+export const SET_SEARCH_RESULTS = "SET_SEARCH_RESULTS";
+export const CLEAR_SEARCH_RESULTS = "CLEAR_SEARCH_RESULTS";
 
-export function send_list_of_all_cryptos(data){
-
-    return {
-        type: SEND_LIST_OF_ALL_CRYPTOS,
-        payload: data,
-    };  
+export function setListOfAllCryptos(data) {
+  return {
+    type: SEND_LIST_OF_ALL_CRYPTOS,
+    payload: data,
+  };
 }
 
-export function send_error(data){
-
-    return {
-        type: SEND_ERROR,
-        payload: data,
-    };  
+export function reportError(data) {
+  return {
+    type: REPORT_ERROR,
+    payload: data,
+  };
 }
 
-
-export function send_base_currency(data){
-
-    return {
-        type: SEND_BASE_CURRENCY,
-        payload: data,
-    };  
+export function setBaseCurrency(data) {
+  return {
+    type: SET_BASE_CURRENCY,
+    payload: data,
+  };
 }
 
-export function send_selected_crypto(data){
-
-    return {
-        type: SEND_SELECTED_CRYPTO,
-        payload: data,
-    };  
+export function setSelectedCrypto(data) {
+  return {
+    type: SET_SELECTED_CRYPTO,
+    payload: data,
+  };
 }
 
-export function validate (x){return (dispatch, getState)=>{ 
-    
-        const { selected_crypto, base_currency } = getState();
-        //console.log('selected crypto ',selected_crypto, 'base_currency ',base_currency);
-        if(selected_crypto && base_currency){console.log('validated'); 
-            dispatch(toggle_validation_alert_visibility(false));
-            dispatch(set_search_results([selected_crypto.value, base_currency, selected_crypto.label]));
-           // console.log(x);
-            } 
-        else{
-            //console.log('not validated');
-            dispatch(toggle_validation_alert_visibility(true))} 
-        }
+export function validate(x) {
+  return (dispatch, getState) => {
+    const { selected_crypto, baseCurrency } = getState();
+
+    if (selected_crypto && baseCurrency) {
+      console.log("validated");
+      dispatch(toggleValidationAlertVisibility(false));
+      dispatch(setSearchResults([selected_crypto.value, baseCurrency, selected_crypto.label]));
+    } else {
+      dispatch(toggleValidationAlertVisibility(true));
     }
-    
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-export function clear_search_results(){
-    return{type: CLEAR_SEARCH_RESULTS}
+  };
 }
 
-export function send_historical(data){
-
-    return {
-        type: SEND_HISTORICAL,
-        payload: data,
-    };  
+export function clearSearchResults() {
+  return { type: CLEAR_SEARCH_RESULTS };
 }
 
-export function clear_historical(){
-
-    return {
-        type: CLEAR_HISTORICAL, 
-    };  
+export function setHistoricalPrices(data) {
+  return {
+    type: SET_HISTORICAL_PRICES,
+    payload: data,
+  };
 }
 
-
-export function send_current(data){
-
-    return {
-        type: SEND_CURRENT,
-        payload: data,
-    };  
+export function clearHistoricalPrices() {
+  return {
+    type: CLEAR_HISTORICAL_PRICES,
+  };
 }
 
-export function set_search_results(data){
-    return {
-        type: SET_SEARCH_RESULTS,
-        payload: data,
-    }; 
+export function setCurrentPrice(data) {
+  return {
+    type: SET_CURRENT_PRICE,
+    payload: data,
+  };
 }
 
-export function hide_loaded_coins_msg(){
-
-    return {
-        type: HIDE_LOADED_COINS_MSG,
-    };  
+export function setSearchResults(data) {
+  return {
+    type: SET_SEARCH_RESULTS,
+    payload: data,
+  };
 }
 
+export function hideLoadedCoinsMessage() {
+  return {
+    type: HIDE_LOADED_COINS_MESSAGE,
+  };
+}
 
-export function toggle_validation_alert_visibility(data){
-
-    return {
-        type: TOGGLE_VALIDATION_ALERT_VISIBILITY,
-        payload: data,
-    };
+export function toggleValidationAlertVisibility(data) {
+  return {
+    type: TOGGLE_VALIDATION_ALERT_VISIBILITY,
+    payload: data,
+  };
 }
