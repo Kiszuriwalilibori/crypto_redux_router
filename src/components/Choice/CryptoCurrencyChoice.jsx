@@ -5,31 +5,32 @@ import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
 import VirtualizedSelect from 'react-virtualized-select'
 import {connect} from'react-redux';
+import PropTypes from 'prop-types';
 
 const createOption =(ary)=>{const result = {}; result.value = ary[0];result.label = ary[1]; return result;}
 
 const prepareCryptoCurrencyChoice = (props)=>{
     
-    const {cryptos, selected_crypto, setSelectedCrypto} = props;
-    const select_options = cryptos.map(createOption);
+    const {cryptos, selectedCrypto, setSelectedCrypto} = props;
+    const selectOptions = cryptos.map(createOption);
     
     return(
 
         (cryptos && cryptos.length)?<VirtualizedSelect 
-        value ={selected_crypto}
+        value ={selectedCrypto}
         closeMenuOnSelect ={false}
         className="selector-item virtualized"
         placeholder = "Wybierz kryptowalutę"
         isClearable = {true}
         isSearchable ={true}
         onChange ={(selectValue)=>{setSelectedCrypto(selectValue)}}
-        options = {select_options} />:null
+        options = {selectOptions} />:null
     )
 }
 
 const mapStateToProps = (state) => ({
     cryptos: state.list_of_all_cryptos,
-    selected_crypto: state.selected_crypto,
+    selectedCrypto: state.selected_crypto,
 
   });
 
@@ -39,3 +40,9 @@ const  mapDispatchToProps = (dispatch) => ({
 
 const CryptoCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(prepareCryptoCurrencyChoice);
 export default CryptoCurrencyChoice;
+
+prepareCryptoCurrencyChoice.propTypes ={
+    cryptos:PropTypes.array,
+    selectedCrypto:PropTypes.object,
+    setSelectedCrypto:PropTypes.func
+}

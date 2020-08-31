@@ -117,8 +117,12 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-.virtualized input {
-  width: 90%;
+.virtualized .Select-input {
+  width: 100%;
+}
+
+.virtualized .Select-input input {
+  width: 100% !important;
   margin: 0 auto;
   display: block;
   border: 1px solid white;

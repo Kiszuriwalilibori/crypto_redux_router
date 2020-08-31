@@ -54,7 +54,6 @@ CryptoCurrency Tracker
 ##### 1.5
 - lazy and suspense for DataDisplay
 
-
 ## TODO
 - support for IE
 - more action on error no data for currency,
@@ -63,4 +62,9 @@ CryptoCurrency Tracker
 - sometimes very long prices (petrodolar ) destroy table
 - keyboard service
 - implementation for INEWSTUJ
+- still vars with _
+- własciwie guzik wyszukaj nie musi być obecny od razu ale dopiero po wypełnieniu obu
+- przy powrocie do wyboru mogłoby czyścić - do rozwazenia
+- podczas pobierania w pierwszym ekranie spinner bo potrafi trwać długo
+- nie jest jasne, że w drugim oknie mozna kliknąć i rozwinąc listę
 

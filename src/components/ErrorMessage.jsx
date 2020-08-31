@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Grow from "@material-ui/core/Grow";
-
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const MyDialog = withStyles({
   root: {
@@ -49,3 +49,7 @@ const ErrorMessage = withRouter(
 );
 
 export default ErrorMessage;
+
+prepareErrorMessage.propTypes ={
+  error: PropTypes.object
+}

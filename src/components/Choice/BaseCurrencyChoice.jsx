@@ -7,6 +7,8 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import {setBaseCurrency} from '../../js/ACTIONS/actions';
 import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+
 
 const MyFormControl = withStyles({
   root: {
@@ -53,3 +55,8 @@ const  mapDispatchToProps = (dispatch) => ({
 });
 
 export const BaseCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(prepareRadioButtonsGroup);
+
+prepareRadioButtonsGroup.propTypes ={
+baseCurrency:PropTypes.string,
+setBaseCurrency:PropTypes.func
+}

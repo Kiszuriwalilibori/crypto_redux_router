@@ -9,8 +9,7 @@ import { CryptoCurrencyContainer, Button } from "../details";
 import CryptoCurrencyCurrentPrice from "./CryptoCurrencyCurrentPrice";
 import CryptoCurrencyHistoricalPrices from "./CryptoCurrencyHistoricalPrices";
 import Grow from "@material-ui/core/Grow";
-
-//import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Controls = styled.div`
   width: 100%;
@@ -56,7 +55,6 @@ const CryptoCurrencyPricesContainer = styled.div`
 
 const prepareResults = (props) => {
   const { content, clearLoop } = props;
-
   return content ? (
     <React.Fragment>
       <Controls>
@@ -88,3 +86,9 @@ const mapStateToProps = (state) => ({
 
 const Results = withRouter(connect(mapStateToProps, null)(prepareResults));
 export default Results;
+
+prepareResults.propTypes ={
+content: PropTypes.array,
+cryptoID: PropTypes.string,
+clearLoop: PropTypes.func
+}

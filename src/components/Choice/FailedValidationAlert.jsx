@@ -2,6 +2,7 @@ import * as React from 'react';
 import {connect} from'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import { Alert, AlertTitle } from '@material-ui/lab';
+import PropTypes from 'prop-types';
 
 const StyledAlert = withStyles({
     root: {
@@ -26,4 +27,8 @@ let mapStateToProps = (state) => ({
 
 const FailedValidationAlert = connect(mapStateToProps, null)(prepareFailedValidationAlert);
 export default FailedValidationAlert;
-  
+
+prepareFailedValidationAlert.propTypes ={
+  visible: PropTypes.bool,
+  message: PropTypes.string
+}

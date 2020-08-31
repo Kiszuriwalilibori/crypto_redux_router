@@ -107,6 +107,7 @@ const reducer = (state = initialState, action) => {
           first_content: first_content,
         };
       }
+    break;
     default:
       return state;
   }

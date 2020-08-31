@@ -7,7 +7,7 @@ import {
 } from "../ACTIONS/actions";
 import { timestamps, link, createObject } from "./functions";
 
-export function validate_and_get_historical_data(redirect, clear) {
+export function validateAndGetHistoricalData(redirect, clear) {
   return (dispatch, getState, Axios) => {
     const { selected_crypto, baseCurrency } = getState();
     if (selected_crypto && baseCurrency) {
