@@ -4,7 +4,7 @@
     "static/js/0.d858351b.chunk.js.map": "/crypto_redux_router/static/js/0.d858351b.chunk.js.map",
     "static/js/1.883d0268.chunk.js": "/crypto_redux_router/static/js/1.883d0268.chunk.js",
     "static/js/1.883d0268.chunk.js.map": "/crypto_redux_router/static/js/1.883d0268.chunk.js.map",
-    "main.css": "/crypto_redux_router/static/css/main.766f1227.chunk.css",
+    "main.css": "/crypto_redux_router/static/css/main.62f3269d.chunk.css",
     "main.js": "/crypto_redux_router/static/js/main.4232bd80.chunk.js",
     "main.js.map": "/crypto_redux_router/static/js/main.4232bd80.chunk.js.map",
     "runtime-main.js": "/crypto_redux_router/static/js/runtime-main.30fe7b6a.js",
@@ -25,10 +25,10 @@
     "static/js/10.cefe4a6a.chunk.js": "/crypto_redux_router/static/js/10.cefe4a6a.chunk.js",
     "static/js/10.cefe4a6a.chunk.js.map": "/crypto_redux_router/static/js/10.cefe4a6a.chunk.js.map",
     "index.html": "/crypto_redux_router/index.html",
-    "precache-manifest.e507d6aacbe3e9c9d9f8ab05a29e76b8.js": "/crypto_redux_router/precache-manifest.e507d6aacbe3e9c9d9f8ab05a29e76b8.js",
+    "precache-manifest.a3a09a41f0d32da6a505db2d9adb6c4c.js": "/crypto_redux_router/precache-manifest.a3a09a41f0d32da6a505db2d9adb6c4c.js",
     "service-worker.js": "/crypto_redux_router/service-worker.js",
     "static/css/5.4181bbfd.chunk.css.map": "/crypto_redux_router/static/css/5.4181bbfd.chunk.css.map",
-    "static/css/main.766f1227.chunk.css.map": "/crypto_redux_router/static/css/main.766f1227.chunk.css.map",
+    "static/css/main.62f3269d.chunk.css.map": "/crypto_redux_router/static/css/main.62f3269d.chunk.css.map",
     "static/js/0.d858351b.chunk.js.LICENSE.txt": "/crypto_redux_router/static/js/0.d858351b.chunk.js.LICENSE.txt",
     "static/js/1.883d0268.chunk.js.LICENSE.txt": "/crypto_redux_router/static/js/1.883d0268.chunk.js.LICENSE.txt",
     "static/js/4.3cf12b76.chunk.js.LICENSE.txt": "/crypto_redux_router/static/js/4.3cf12b76.chunk.js.LICENSE.txt",
@@ -38,7 +38,7 @@
   "entrypoints": [
     "static/js/runtime-main.30fe7b6a.js",
     "static/js/4.3cf12b76.chunk.js",
-    "static/css/main.766f1227.chunk.css",
+    "static/css/main.62f3269d.chunk.css",
     "static/js/main.4232bd80.chunk.js"
   ]
 }
