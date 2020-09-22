@@ -5,10 +5,10 @@
     "static/js/1.883d0268.chunk.js": "/crypto_redux_router/static/js/1.883d0268.chunk.js",
     "static/js/1.883d0268.chunk.js.map": "/crypto_redux_router/static/js/1.883d0268.chunk.js.map",
     "main.css": "/crypto_redux_router/static/css/main.62f3269d.chunk.css",
-    "main.js": "/crypto_redux_router/static/js/main.4232bd80.chunk.js",
-    "main.js.map": "/crypto_redux_router/static/js/main.4232bd80.chunk.js.map",
-    "runtime-main.js": "/crypto_redux_router/static/js/runtime-main.30fe7b6a.js",
-    "runtime-main.js.map": "/crypto_redux_router/static/js/runtime-main.30fe7b6a.js.map",
+    "main.js": "/crypto_redux_router/static/js/main.d6bbc091.chunk.js",
+    "main.js.map": "/crypto_redux_router/static/js/main.d6bbc091.chunk.js.map",
+    "runtime-main.js": "/crypto_redux_router/static/js/runtime-main.1b09cae5.js",
+    "runtime-main.js.map": "/crypto_redux_router/static/js/runtime-main.1b09cae5.js.map",
     "static/js/4.3cf12b76.chunk.js": "/crypto_redux_router/static/js/4.3cf12b76.chunk.js",
     "static/js/4.3cf12b76.chunk.js.map": "/crypto_redux_router/static/js/4.3cf12b76.chunk.js.map",
     "static/css/5.4181bbfd.chunk.css": "/crypto_redux_router/static/css/5.4181bbfd.chunk.css",
@@ -20,12 +20,12 @@
     "static/js/7.652aff71.chunk.js.map": "/crypto_redux_router/static/js/7.652aff71.chunk.js.map",
     "static/js/8.5d58d4a2.chunk.js": "/crypto_redux_router/static/js/8.5d58d4a2.chunk.js",
     "static/js/8.5d58d4a2.chunk.js.map": "/crypto_redux_router/static/js/8.5d58d4a2.chunk.js.map",
-    "static/js/9.1a2cb5eb.chunk.js": "/crypto_redux_router/static/js/9.1a2cb5eb.chunk.js",
-    "static/js/9.1a2cb5eb.chunk.js.map": "/crypto_redux_router/static/js/9.1a2cb5eb.chunk.js.map",
+    "static/js/9.bbc19325.chunk.js": "/crypto_redux_router/static/js/9.bbc19325.chunk.js",
+    "static/js/9.bbc19325.chunk.js.map": "/crypto_redux_router/static/js/9.bbc19325.chunk.js.map",
     "static/js/10.cefe4a6a.chunk.js": "/crypto_redux_router/static/js/10.cefe4a6a.chunk.js",
     "static/js/10.cefe4a6a.chunk.js.map": "/crypto_redux_router/static/js/10.cefe4a6a.chunk.js.map",
     "index.html": "/crypto_redux_router/index.html",
-    "precache-manifest.a3a09a41f0d32da6a505db2d9adb6c4c.js": "/crypto_redux_router/precache-manifest.a3a09a41f0d32da6a505db2d9adb6c4c.js",
+    "precache-manifest.20235d3910f17bf3b6285d449d13559a.js": "/crypto_redux_router/precache-manifest.20235d3910f17bf3b6285d449d13559a.js",
     "service-worker.js": "/crypto_redux_router/service-worker.js",
     "static/css/5.4181bbfd.chunk.css.map": "/crypto_redux_router/static/css/5.4181bbfd.chunk.css.map",
     "static/css/main.62f3269d.chunk.css.map": "/crypto_redux_router/static/css/main.62f3269d.chunk.css.map",
@@ -36,9 +36,9 @@
     "static/media/styles.css": "/crypto_redux_router/static/media/background_640.db77d5f0.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.30fe7b6a.js",
+    "static/js/runtime-main.1b09cae5.js",
     "static/js/4.3cf12b76.chunk.js",
     "static/css/main.62f3269d.chunk.css",
-    "static/js/main.4232bd80.chunk.js"
+    "static/js/main.d6bbc091.chunk.js"
   ]
 }
