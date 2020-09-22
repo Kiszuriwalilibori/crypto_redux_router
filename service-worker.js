@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/crypto_redux_router/precache-manifest.44a35604feb7f5292fe2fde892287e39.js"
+  "/crypto_redux_router/precache-manifest.e507d6aacbe3e9c9d9f8ab05a29e76b8.js"
 );
 
 self.addEventListener('message', (event) => {

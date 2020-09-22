@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1120c599832e38da36b2a51a06cdc0bc",
+    "revision": "67415b384cf5a09ef2bea061d429c315",
     "url": "/crypto_redux_router/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crypto_redux_router/static/css/5.4181bbfd.chunk.css"
   },
   {
-    "revision": "3b47997d4d31229869d8",
-    "url": "/crypto_redux_router/static/css/main.af02ea51.chunk.css"
+    "revision": "51bf7822f336340e868e",
+    "url": "/crypto_redux_router/static/css/main.766f1227.chunk.css"
   },
   {
     "revision": "4fb66e0af0f971ff3a3f",
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crypto_redux_router/static/js/1.883d0268.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4a60f04d513496dd5e17",
-    "url": "/crypto_redux_router/static/js/10.645f1e03.chunk.js"
+    "revision": "1d835d0240cea74cc191",
+    "url": "/crypto_redux_router/static/js/10.cefe4a6a.chunk.js"
   },
   {
     "revision": "3d507f1a1031d2f6a69e",
@@ -52,24 +52,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crypto_redux_router/static/js/6.551b5388.chunk.js"
   },
   {
-    "revision": "b442a92021357e1d6e8f",
-    "url": "/crypto_redux_router/static/js/7.e44c2cb5.chunk.js"
+    "revision": "a3212b2f36ebc2282b31",
+    "url": "/crypto_redux_router/static/js/7.652aff71.chunk.js"
   },
   {
     "revision": "41102ad5b75ccf59f703",
     "url": "/crypto_redux_router/static/js/8.5d58d4a2.chunk.js"
   },
   {
-    "revision": "ef182f4f58193c7908aa",
-    "url": "/crypto_redux_router/static/js/9.199b9850.chunk.js"
+    "revision": "13402438015c3de30adf",
+    "url": "/crypto_redux_router/static/js/9.1a2cb5eb.chunk.js"
   },
   {
-    "revision": "3b47997d4d31229869d8",
-    "url": "/crypto_redux_router/static/js/main.9a716546.chunk.js"
+    "revision": "51bf7822f336340e868e",
+    "url": "/crypto_redux_router/static/js/main.4232bd80.chunk.js"
   },
   {
-    "revision": "812a6997920b2c69f267",
-    "url": "/crypto_redux_router/static/js/runtime-main.30cd4605.js"
+    "revision": "21345a9d7bece30c1668",
+    "url": "/crypto_redux_router/static/js/runtime-main.30fe7b6a.js"
   },
   {
     "revision": "bd889b585bc57be13df5aa4861518f00",
