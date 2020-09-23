@@ -6,6 +6,7 @@ import oko from "../../graphics/oko.png";
 import waga from "../../graphics/waga.png";
 import waga_hover from "../../graphics/wagahover.png";
 import oko_hover from "../../graphics/okohover.png";
+import MyTooltip from "../details";
 
 const InvestWrapper = styled.div`
   width: 109px;
@@ -61,9 +62,11 @@ const InvestButton = () => {
   return (
     <PriceTableCell>
       <InvestWrapper>
+      <MyTooltip title ='Ta funkcjonalność nie jest jeszcze zaaplikowana'  placement ='top-start'>
         <Button variant="contained" color="secondary" size="small">
           Inwestuj
         </Button>
+        </MyTooltip>
       </InvestWrapper>
     </PriceTableCell>
   );

@@ -33,6 +33,7 @@ const UnconnectedSearchSection = (props) => {
   } = props;
 
   const clearLoop = () => {
+
     clearSearchResults();
     clearInterval(Loop);
   };
@@ -70,6 +71,7 @@ const debouncedValidate = useDebounce((()=>validateAndGetHistoricals(redirect, c
   useEffect(() => {
     if (searchResults && searchResults.length) {
       redirect.connecting();
+      console.log(Loop);
       clearLoop();
       returnGetCurrentPrice();
       Loop = setInterval(returnGetCurrentPrice, 5000);

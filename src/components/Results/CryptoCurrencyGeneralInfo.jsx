@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {connect} from'react-redux';
 import parasol from '../../graphics/parasol.png';
+import PropTypes from 'prop-types';
 
 const GeneralInfoTitle = styled.div`
   
@@ -101,5 +102,9 @@ const mapStateToProps = (state) => ({
 const CryptoCurrencyGeneralInfo = connect(mapStateToProps, null)(prepareCryptoCurrencyGeneralInfo);
 export default CryptoCurrencyGeneralInfo;
   
-  
+   
+prepareCryptoCurrencyGeneralInfo.propTypes = {
+  value: PropTypes.string
+}
+   
   

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { withRouter } from "react-router";
 import { withStyles } from "@material-ui/core/styles";
+import Tooltip from '@material-ui/core/Tooltip';
 import Box from "@material-ui/core/Box";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
@@ -75,7 +76,7 @@ export const Button = styled.button`
     height: 40px;
     font-size:1rem;
     width: 150px; }
-    &:hover {
+    &:hover,&:focus {
       background-color: #5d89e8;
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5d89e8), color-stop(50%, #2261e0), color-stop(50%, #044bd9), color-stop(100%, #0d53de));
       background-image: -webkit-linear-gradient(top, #5d89e8 0%, #2261e0 50%, #044bd9 50%, #0d53de 100%);
@@ -95,3 +96,21 @@ export const Button = styled.button`
     &:focus {outline:none;}
   
 `;
+
+
+
+
+
+
+
+const MyTooltip = withStyles(theme => ({
+    tooltip: {
+      backgroundColor: '#F5C200',
+      border: '1px solid #EE760A',
+      boxShadow: 'inset 0 0 5px #EE760A',
+      color: 'rgba(0, 0, 0, 0.87)',
+      fontSize: 11, 
+    },
+  }))(Tooltip);
+
+export default MyTooltip;

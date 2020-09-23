@@ -86,7 +86,7 @@ const reducer = (state = initialState, action) => {
     case actions.SEND_CURRENT:
       if (
         state.currentCryptoValue === null ||
-        state.currentCryptoValue != action.payload[1]
+        state.currentCryptoValue !== action.payload[1]
       ) {
         const cryptoData = new CryptoCurrencyData(
           createObject(link.currentPriceText, action.payload[1])
@@ -108,6 +108,7 @@ const reducer = (state = initialState, action) => {
           first_content: first_content,
         };
       }
+    
     default:
       return state;
   }

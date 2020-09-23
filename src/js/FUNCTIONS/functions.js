@@ -62,7 +62,11 @@ export function formatResult(output, testValue, current, callback, referenceCoin
       return element;
     } else {
       
-      const value = current.toString()+ ' '+ referenceCoin;
+      
+      const formattedCurrent =  (current.toString().length > 10)? current.toExponential(2): current.toString();
+      
+      //const value = current.toString()+ ' '+ referenceCoin;// tu by trza popracować
+      const value = formattedCurrent+ ' '+ referenceCoin;
       element =createObject(testValue, value);
       return element;
     }

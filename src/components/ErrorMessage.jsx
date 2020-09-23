@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Grow from "@material-ui/core/Grow";
+import PropTypes from 'prop-types';
 
 import { Link } from "react-router-dom";
 
@@ -47,3 +48,7 @@ const mapStateToProps = (state) => ({
 export const ErrorMessage = withRouter(
   connect(mapStateToProps, null)(prepareErrorMessage)
 );
+
+prepareErrorMessage.propTypes ={
+  error: PropTypes.object
+}

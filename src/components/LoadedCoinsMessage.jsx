@@ -4,6 +4,7 @@ import { Alert } from "@material-ui/lab";
 import { withStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 import { hide_loaded_coins_msg } from "../js/ACTIONS/actions";
+import PropTypes from 'prop-types';
 
 const MyAlert = withStyles({
   root: {
@@ -46,3 +47,10 @@ const LoadedCoinsMessage = connect(
 )(prepareLoadedCoinsMessage);
 
 export default LoadedCoinsMessage;
+
+
+prepareLoadedCoinsMessage.propTypes ={
+  open:PropTypes.bool,
+  count:PropTypes.number,
+  close:PropTypes.func
+}

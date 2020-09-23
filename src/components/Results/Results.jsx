@@ -9,8 +9,8 @@ import { CryptoCurrencyContainer, Button } from "../details";
 import CryptoCurrencyCurrentPrice from "./CryptoCurrencyCurrentPrice";
 import CryptoCurrencyHistoricalPrices from "./CryptoCurrencyHistoricalPrices";
 import Grow from "@material-ui/core/Grow";
-import useDebounce from '../../js/FUNCTIONS/useDebounce';
-//import PropTypes from 'prop-types';
+//import useDebounce from '../../js/FUNCTIONS/useDebounce';
+import PropTypes from 'prop-types';
 
 const Controls = styled.div`
   width: 100%;
@@ -89,3 +89,10 @@ const mapStateToProps = (state) => ({
 
 const Results = withRouter(connect(mapStateToProps, null)(PrepareResults));
 export default Results;
+
+
+PrepareResults.propTypes ={
+  content: PropTypes.array,
+  cryptoID: PropTypes.string,
+  clearLoop: PropTypes.func
+  }
