@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {setSelectedCrypto} from '../../js/ACTIONS/actions';
+import {send_selected_crypto} from '../../js/ACTIONS/actions';
 import "react-virtualized-select/styles.css";
 import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
@@ -11,7 +11,7 @@ const createOption =(ary)=>{const result = {}; result.value = ary[0];result.labe
 
 const prepareCryptoCurrencyChoice = (props)=>{
     
-    const {cryptos, selectedCrypto, setSelectedCrypto} = props;
+    const {cryptos, selectedCrypto, sendSelectedCrypto} = props;
     const selectOptions = cryptos.map(createOption);
     
     return(
@@ -23,7 +23,7 @@ const prepareCryptoCurrencyChoice = (props)=>{
         placeholder = "Wybierz kryptowalutę"
         isClearable = {true}
         isSearchable ={true}
-        onChange ={(selectValue)=>{setSelectedCrypto(selectValue)}}
+        onChange ={(selectValue)=>{sendSelectedCrypto(selectValue)}}
         options = {selectOptions} />:null
     )
 }
@@ -35,14 +35,15 @@ const mapStateToProps = (state) => ({
   });
 
 const  mapDispatchToProps = (dispatch) => ({
-    setSelectedCrypto: (data) => dispatch(setSelectedCrypto(data)),
+    sendSelectedCrypto: (data) => dispatch(send_selected_crypto(data)),
 });
 
 const CryptoCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(prepareCryptoCurrencyChoice);
 export default CryptoCurrencyChoice;
 
+
 prepareCryptoCurrencyChoice.propTypes ={
     cryptos:PropTypes.array,
     selectedCrypto:PropTypes.object,
-    setSelectedCrypto:PropTypes.func
+    sendSelectedCrypto:PropTypes.func
 }

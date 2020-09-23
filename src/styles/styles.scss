@@ -57,10 +57,9 @@ body {
    &:hover{border: 2px solid #EE760A;} 
  
    & .Select-placeholder{color: white; margin-bottom:15px; font-family: 'Lato', sans-serif; };
-
-   & .Select-input{width:100%;}
    
-   & .Select-input input{
+   
+   & input {
      width: 100% !important;
      margin: 0 auto;
      display: block;
@@ -97,7 +96,7 @@ body {
     align-items: center;
     
   }
-  
+  .Select-multi-value-wrapper{display: flex; flex-direction:column; justify-content: center;align-items:center}
   .DataContainer::before {
     min-width: 110px;
     content: 'ALTCOINS';

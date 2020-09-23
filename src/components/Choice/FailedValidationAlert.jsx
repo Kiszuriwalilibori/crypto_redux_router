@@ -27,6 +27,7 @@ let mapStateToProps = (state) => ({
 
 const FailedValidationAlert = connect(mapStateToProps, null)(prepareFailedValidationAlert);
 export default FailedValidationAlert;
+  
 
 prepareFailedValidationAlert.propTypes ={
   visible: PropTypes.bool,

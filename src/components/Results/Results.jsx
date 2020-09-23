@@ -9,7 +9,8 @@ import { CryptoCurrencyContainer, Button } from "../details";
 import CryptoCurrencyCurrentPrice from "./CryptoCurrencyCurrentPrice";
 import CryptoCurrencyHistoricalPrices from "./CryptoCurrencyHistoricalPrices";
 import Grow from "@material-ui/core/Grow";
-import PropTypes from 'prop-types';
+import useDebounce from '../../js/FUNCTIONS/useDebounce';
+//import PropTypes from 'prop-types';
 
 const Controls = styled.div`
   width: 100%;
@@ -53,8 +54,10 @@ const CryptoCurrencyPricesContainer = styled.div`
   }
 `;
 
-const prepareResults = (props) => {
+const PrepareResults = (props) => {
   const { content, clearLoop } = props;
+  
+
   return content ? (
     <React.Fragment>
       <Controls>
@@ -84,11 +87,5 @@ const mapStateToProps = (state) => ({
   clearLoop: state.clear,
 });
 
-const Results = withRouter(connect(mapStateToProps, null)(prepareResults));
+const Results = withRouter(connect(mapStateToProps, null)(PrepareResults));
 export default Results;
-
-prepareResults.propTypes ={
-content: PropTypes.array,
-cryptoID: PropTypes.string,
-clearLoop: PropTypes.func
-}

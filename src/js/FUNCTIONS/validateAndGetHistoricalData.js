@@ -1,18 +1,18 @@
 import {
-  setSearchResults,
-  toggleValidationAlertVisibility,
-  setHistoricalPrices,
-  reportError,
-  clearHistoricalPrices,
+  set_search_results,
+  toggle_validation_alert_visibility,
+  send_historical,
+  send_error,
+  clear_historical,
 } from "../ACTIONS/actions";
 import { timestamps, link, createObject } from "./functions";
 
-export function validateAndGetHistoricalData(redirect, clear) {
+export function validate_and_get_historical_data(redirect, clear) {
   return (dispatch, getState, Axios) => {
-    const { selected_crypto, baseCurrency } = getState();
-    if (selected_crypto && baseCurrency) {
-      dispatch(toggleValidationAlertVisibility(false));
-      dispatch(clearHistoricalPrices());
+    const { selected_crypto, base_currency } = getState();
+    if (selected_crypto && base_currency) {
+      dispatch(toggle_validation_alert_visibility(false));
+      dispatch(clear_historical());
       redirect.connecting();
       const ary = [];
       for (let i = 0; i <= timestamps.reducedLength(); i++) {
@@ -20,7 +20,7 @@ export function validateAndGetHistoricalData(redirect, clear) {
           Axios.get(
             link.historicalPrice(
               selected_crypto.value,
-              baseCurrency,
+              base_currency,
               timestamps.getValue(i)
             ),
             link.header
@@ -31,20 +31,20 @@ export function validateAndGetHistoricalData(redirect, clear) {
       Axios.all(ary)
         .then((responseArr) => {
           responseArr.forEach((item, index) => {
-            let partial = item.data[baseCurrency]
-              ? item.data[baseCurrency]
+            let partial = item.data[base_currency]
+              ? item.data[base_currency]
               : "n/a";
             result.push(createObject(timestamps.getKey(index), partial));
           });
           result.push(clear);
-          dispatch(setHistoricalPrices(result));
+          dispatch(send_historical(result));
           const new_selected_crypto = selected_crypto;
-          const new_baseCurrency = baseCurrency;
+          const new_base_currency = base_currency;
           redirect.search();
           dispatch(
-            setSearchResults([
+            set_search_results([
               new_selected_crypto.value,
-              new_baseCurrency,
+              new_base_currency,
               new_selected_crypto.label,
             ])
           );
@@ -52,7 +52,7 @@ export function validateAndGetHistoricalData(redirect, clear) {
         .catch((error) => {
           redirect.error();
           dispatch(
-            reportError({
+            send_error({
               text:
                 "Podczas pobierania historycznych danych dla " +
                 selected_crypto.label +
@@ -62,7 +62,7 @@ export function validateAndGetHistoricalData(redirect, clear) {
           );
         });
     } else {
-      dispatch(toggleValidationAlertVisibility(true));
+      dispatch(toggle_validation_alert_visibility(true));
     }
   };
 }

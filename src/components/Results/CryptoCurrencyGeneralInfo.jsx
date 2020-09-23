@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import {connect} from'react-redux';
 import parasol from '../../graphics/parasol.png';
-import PropTypes from 'prop-types';
 
 const GeneralInfoTitle = styled.div`
   
@@ -10,6 +9,14 @@ const GeneralInfoTitle = styled.div`
   white-space: pre-wrap;
   text-align: center;
   color: rgb(216,53,80);
+  // @media (max-width: 767px) {
+  //     display: block;
+  //     position: absolute;
+  //     top: -10px;
+  // }
+  // @media (min-width: 768px) and (max-width:1200px) {
+  //     line-height: 1;
+  // }
 }
 `
 const GeneralInfoWrapper = styled.div` 
@@ -44,9 +51,11 @@ const GeneralInfoWrapper = styled.div`
 
 const altcoins_growth = 'Altcoins - hightest growth';
 
+
 const GeneralInfoAlt = styled.div`
   font-size: 10px;
   display: block;
+  
   &::before {
   content: "";
   display: block;
@@ -92,7 +101,5 @@ const mapStateToProps = (state) => ({
 const CryptoCurrencyGeneralInfo = connect(mapStateToProps, null)(prepareCryptoCurrencyGeneralInfo);
 export default CryptoCurrencyGeneralInfo;
   
-prepareCryptoCurrencyGeneralInfo.propTypes = {
-  value: PropTypes.string
-}
+  
   

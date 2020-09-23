@@ -13,7 +13,7 @@ const initialState = {
   currentCryptoValue: null,
   content: [],
   isHistoricalDataReceived: false,
-  baseCurrency: null,
+  base_currency: null,
   selected_crypto: null,
   search_results: [],
 };
@@ -33,12 +33,12 @@ const reducer = (state = initialState, action) => {
         validation_alert_visibility: action.payload,
       };
 
-    case actions.SET_BASE_CURRENCY:
+    case actions.SEND_BASE_CURRENCY:
       return {
         ...state,
-        baseCurrency: action.payload,
+        base_currency: action.payload,
       };
-    case actions.SET_SELECTED_CRYPTO:
+    case actions.SEND_SELECTED_CRYPTO:
       return {
         ...state,
         selected_crypto: action.payload,
@@ -56,18 +56,19 @@ const reducer = (state = initialState, action) => {
         search_results: null,
       };
 
-    case actions.REPORT_ERROR:
+    case actions.SEND_ERROR:
       return {
         ...state,
         error: action.payload,
       };
-    case actions.HIDE_LOADED_COINS_MESSAGE:
+    case actions.HIDE_LOADED_COINS_MSG:
       return {
         ...state,
         isLoadedListOfAllCryptos: action.payload,
       };
-    case actions.SET_HISTORICAL_PRICES:
+    case actions.SEND_HISTORICAL:
       const clear = action.payload.pop();
+      
       return {
         ...state,
         historical: action.payload,
@@ -75,14 +76,14 @@ const reducer = (state = initialState, action) => {
         isHistoricalDataReceived: true,
       };
 
-    case actions.CLEAR_HISTORICAL_PRICES:
+    case actions.CLEAR_HISTORICAL:
       return {
         ...state,
         isHistoricalDataReceived: false,
         historical: null,
       };
 
-    case actions.SET_CURRENT_PRICE:
+    case actions.SEND_CURRENT:
       if (
         state.currentCryptoValue === null ||
         state.currentCryptoValue != action.payload[1]
@@ -107,7 +108,6 @@ const reducer = (state = initialState, action) => {
           first_content: first_content,
         };
       }
-    break;
     default:
       return state;
   }

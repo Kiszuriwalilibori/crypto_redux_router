@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { PriceTableCell } from "./PriceTableCell";
 import * as React from "react";
-import PropTypes from 'prop-types';
 
 const CurrentPriceValue = styled.div`
   font-size: 1.25rem;
@@ -30,10 +29,8 @@ const mapStateToProps = (state) => ({
   current_price: state.first_content,
 });
 
-const CryptoCurrencyCurrentPrice = connect(mapStateToProps, null)(prepareCryptoCurrencyCurrentPrice);
+const CryptoCurrencyCurrentPrice = connect(
+  mapStateToProps,
+  null
+)(prepareCryptoCurrencyCurrentPrice);
 export default CryptoCurrencyCurrentPrice;
-
-prepareCryptoCurrencyCurrentPrice.propTypes ={
-  current_price:PropTypes.object,
-}
-

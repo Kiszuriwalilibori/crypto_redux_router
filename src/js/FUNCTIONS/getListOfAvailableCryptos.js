@@ -1,5 +1,5 @@
 
-import {reportError, setListOfAllCryptos, hideLoadedCoinsMessage } from '../ACTIONS/actions';
+import {send_error, send_list_of_all_cryptos, hide_loaded_coins_msg } from '../ACTIONS/actions';
 
 const linkToListOfAllCryptos = 'https://min-api.cryptocompare.com/data/all/coinlist';
 
@@ -22,11 +22,11 @@ export default function getListOfAvailableCryptos(redirect) {
           text: 'Podczas próby pobrania listy dostępnych kryptowalut wystąpił błąd',
           code: error.message
         };
-        dispatch(reportError(err));
+        dispatch(send_error(err));
         redirect.error();
       });
-    response && (dispatch(setListOfAllCryptos(extractListOfCryptos(response))));
+    response && (dispatch(send_list_of_all_cryptos(extractListOfCryptos(response))));
     } 
-    else{dispatch(hideLoadedCoinsMessage())}
+    else{dispatch(hide_loaded_coins_msg())}
   };
 }

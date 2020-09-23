@@ -1,6 +1,6 @@
 import React from "react";
 import CryptoCurrencyChoice from "./CryptoCurrencyChoice";
-import { validateAndGetHistoricalData } from "../../js/FUNCTIONS/validateAndGetHistoricalData";
+import { validate_and_get_historical_data } from "../../js/FUNCTIONS/validateAndGetHistoricalData";
 import getListOfAvailableCryptos from "../../js/FUNCTIONS/getListOfAvailableCryptos";
 import getCurrentCryptoPrice from "../../js/FUNCTIONS/getCurrentCryptoPrice";
 import { Container, Button } from "../details";
@@ -11,23 +11,23 @@ import { connect } from "react-redux";
 import { BaseCurrencyChoice } from "./BaseCurrencyChoice";
 import { useHistory } from "react-router-dom";
 import LoadedCoinsMessage from "../LoadedCoinsMessage";
+import useDebounce from '../../js/FUNCTIONS/useDebounce';
 import PropTypes from 'prop-types';
 
 import {
-  reportError,
-  setCurrentPrice,
-  clearSearchResults,
+ 
+  clear_search_results,
 } from "../../js/ACTIONS/actions";
 
 var Loop;
-//do rozważenia przenieść mniej więcej wszystk z clearloop do tego co się wykonuje po mount
+
 //////////////////////////////////////////////////////////////////////////////
 
 const UnconnectedSearchSection = (props) => {
   const {
     searchResults,
     clearSearchResults,
-    validateAndGetHistoricalData,
+    validateAndGetHistoricals,
     getCurrentCryptoPrice,
     getListOfAvailableCryptos,
   } = props;
@@ -60,21 +60,19 @@ const UnconnectedSearchSection = (props) => {
     []
   );
 
-  function currentPrice() {
+  function returnGetCurrentPrice() {
     return getCurrentCryptoPrice(searchResults, redirect);
   }
-     
+  
+const debouncedValidate = useDebounce((()=>validateAndGetHistoricals(redirect, clearLoop)),500);
 
-  function validateAndStartReadingHistoricalValues() {
-    return validateAndGetHistoricalData(redirect, clearLoop);
-  }
 
   useEffect(() => {
     if (searchResults && searchResults.length) {
       redirect.connecting();
       clearLoop();
-      currentPrice()
-      Loop = setInterval(currentPrice, 5000);
+      returnGetCurrentPrice();
+      Loop = setInterval(returnGetCurrentPrice, 5000);
     }
   }, [searchResults]);
 
@@ -84,7 +82,7 @@ const UnconnectedSearchSection = (props) => {
 
   return (
     <Container>
-      <Button ID="Button" onClick={validateAndStartReadingHistoricalValues}>
+      <Button ID="Button" onClick={debouncedValidate}>
         Pokaż dane
       </Button>
       <BaseCurrencyChoice />
@@ -96,10 +94,10 @@ const UnconnectedSearchSection = (props) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  reportError: (data) => dispatch(reportError(data)),
-  setCurrentPrice: (data) => dispatch(setCurrentPrice(data)),
-  clearSearchResults: () => dispatch(clearSearchResults()),
-  validateAndGetHistoricalData: (a, b) => dispatch(validateAndGetHistoricalData(a, b)),
+  
+  clearSearchResults: () => dispatch(clear_search_results()),
+  validateAndGetHistoricals: (a, b) =>
+    dispatch(validate_and_get_historical_data(a, b)),
   getListOfAvailableCryptos: (x) => dispatch(getListOfAvailableCryptos(x)),
   getCurrentCryptoPrice: (x, y) => dispatch(getCurrentCryptoPrice(x, y)),
 });

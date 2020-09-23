@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import { PriceTableCell } from "./PriceTableCell";
 import * as React from "react";
 import styled from "styled-components";
-import PropTypes from 'prop-types';
 
 const HistoricalValue = styled.div`
   font-size: 20px;
@@ -34,7 +33,3 @@ const CryptoCurrencyHistoricalPrices = connect(
   null
 )(prepareCryptoCurrencyHistoricalPrices);
 export default CryptoCurrencyHistoricalPrices;
-
-prepareCryptoCurrencyHistoricalPrices.propTypes ={
-  historicals: PropTypes.array
-}
