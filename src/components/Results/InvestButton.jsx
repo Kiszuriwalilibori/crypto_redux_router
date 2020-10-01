@@ -62,7 +62,7 @@ const InvestButton = () => {
   return (
     <PriceTableCell>
       <InvestWrapper>
-      <MyTooltip title ='Ta funkcjonalność nie jest jeszcze zaaplikowana'  placement ='top-start'>
+      <MyTooltip title ='Ta funkcjonalność nie jest jeszcze zaimplementowana'  placement ='top-start'>
         <Button variant="contained" color="secondary" size="small">
           Inwestuj
         </Button>

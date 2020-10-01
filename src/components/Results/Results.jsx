@@ -56,8 +56,6 @@ const CryptoCurrencyPricesContainer = styled.div`
 
 const PrepareResults = (props) => {
   const { content, clearLoop } = props;
-  
-
   return content ? (
     <React.Fragment>
       <Controls>
@@ -82,7 +80,7 @@ const PrepareResults = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  content: state.content,
+  content: state.content.length,
   cryptoID: state.currentCryptoID,
   clearLoop: state.clear,
 });
@@ -92,7 +90,7 @@ export default Results;
 
 
 PrepareResults.propTypes ={
-  content: PropTypes.array,
+  content: PropTypes.number,
   cryptoID: PropTypes.string,
   clearLoop: PropTypes.func
   }

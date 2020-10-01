@@ -72,5 +72,5 @@ CryptoCurrency Tracker
 - podczas pobierania w pierwszym ekranie spinner bo potrafi trwać długo
 - nie jest jasne, że w drugim oknie mozna kliknąć i rozwinąc listę
 -  433 crypto generates an erro which can't be looped out
-- czy na pewno content potrzebny w result/ służy tylko do sprawdzenia obecności a generuje odmalowanie
+- czy na pewno content potrzebny w result/ służy tylko do sprawdzenia obecności a generuje odmalowanie. Zmieniłem na state.content.length (number) ale nadal tak samo. Trza chyba w reducerze zrobić żeby reagował na długość content osobny klucz
 
