@@ -43,6 +43,12 @@ const reducer = (state = initialState, action) => {
         ...state,
         selected_crypto: action.payload,
       };
+    case actions.CLEAR_SELECTIONS:
+      return {
+        ...state,
+        selected_crypto: null,
+        base_currency:null,
+      };
 
     case actions.SET_SEARCH_RESULTS:
       return {
@@ -57,6 +63,7 @@ const reducer = (state = initialState, action) => {
       };
 
     case actions.SEND_ERROR:
+      
       return {
         ...state,
         error: action.payload,

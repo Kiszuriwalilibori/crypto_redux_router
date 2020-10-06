@@ -10,6 +10,7 @@ export const SEND_BASE_CURRENCY ='SEND CURRENCY';
 export const SEND_SELECTED_CRYPTO ='SEND_SELECTED_CRYPTO';
 export const SET_SEARCH_RESULTS ='SET_SEARCH_RESULTS';
 export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
+export const CLEAR_SELECTIONS = 'CLEAR_SELECTIONS';
 
 export function send_list_of_all_cryptos(data){
 
@@ -44,11 +45,20 @@ export function send_selected_crypto(data){
     };  
 }
 
+export function clear_selections(){
+
+    return {
+        type: CLEAR_SELECTIONS,
+    };  
+}
+
+
+
 export function validate (x){return (dispatch, getState)=>{ 
     
         const { selected_crypto, base_currency } = getState();
         
-        if(selected_crypto && base_currency){console.log('validated'); 
+        if(selected_crypto && base_currency){ 
             dispatch(toggle_validation_alert_visibility(false));
             dispatch(set_search_results([selected_crypto.value, base_currency, selected_crypto.label]));
            

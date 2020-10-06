@@ -14,7 +14,7 @@ const extractListOfCryptos = (obj)=>{
 
 export default function getListOfAvailableCryptos(redirect) {
   return async (dispatch, getState, Axios) => {
-    
+   
     const {isLoadedListOfAllCryptos} = getState();
     if (!isLoadedListOfAllCryptos){
       const response = await Axios.get(linkToListOfAllCryptos).catch((error) => {

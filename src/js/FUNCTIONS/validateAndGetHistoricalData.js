@@ -38,6 +38,7 @@ export function validate_and_get_historical_data(redirect, clear) {
           });
           result.push(clear);
           dispatch(send_historical(result));
+        
           const new_selected_crypto = selected_crypto;
           const new_base_currency = base_currency;
           redirect.search();
@@ -50,6 +51,7 @@ export function validate_and_get_historical_data(redirect, clear) {
           );
         })
         .catch((error) => {
+          
           redirect.error();
           dispatch(
             send_error({

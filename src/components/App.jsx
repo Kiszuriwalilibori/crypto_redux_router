@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import EmptyLoader from "./EmptyLoader";
 
 const Results = lazy(() => import("./Results/Results"));
-const Error = lazy(() => import("./ErrorMessage"));
+const ErrorMessage = lazy(() => import("./ErrorMessage"));
 const SearchSection = lazy(() => import("./Choice/SearchSection"));
 const Loader = lazy(() => import("./Loader"));
 
@@ -29,7 +29,7 @@ function App() {
         </Route>
         <Route path="/error">
           <Suspense fallback={EmptyLoader()}>
-            <Error />
+            <ErrorMessage />
           </Suspense>
         </Route>
       </Switch>

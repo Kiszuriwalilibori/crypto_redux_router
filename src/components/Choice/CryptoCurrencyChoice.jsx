@@ -17,6 +17,7 @@ const prepareCryptoCurrencyChoice = (props)=>{
     return(
 
         (cryptos && cryptos.length)?<VirtualizedSelect 
+        
         value ={selectedCrypto}
         closeMenuOnSelect ={false}
         className="selector-item virtualized"

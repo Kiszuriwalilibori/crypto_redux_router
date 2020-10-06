@@ -16,7 +16,7 @@ import PropTypes from 'prop-types';
 
 import {
  
-  clear_search_results,
+  clear_search_results, clear_selections,
 } from "../../js/ACTIONS/actions";
 
 var Loop;
@@ -27,6 +27,7 @@ const UnconnectedSearchSection = (props) => {
   const {
     searchResults,
     clearSearchResults,
+    clearSelections,
     validateAndGetHistoricals,
     getCurrentCryptoPrice,
     getListOfAvailableCryptos,
@@ -35,6 +36,7 @@ const UnconnectedSearchSection = (props) => {
   const clearLoop = () => {
 
     clearSearchResults();
+    clearSelections();
     clearInterval(Loop);
   };
 
@@ -62,7 +64,7 @@ const UnconnectedSearchSection = (props) => {
   );
 
   function returnGetCurrentPrice() {
-    return getCurrentCryptoPrice(searchResults, redirect);
+    return getCurrentCryptoPrice(searchResults, redirect, clearLoop);
   }
   
 const debouncedValidate = useDebounce((()=>validateAndGetHistoricals(redirect, clearLoop)),500);
@@ -71,7 +73,6 @@ const debouncedValidate = useDebounce((()=>validateAndGetHistoricals(redirect, c
   useEffect(() => {
     if (searchResults && searchResults.length) {
       redirect.connecting();
-      console.log(Loop);
       clearLoop();
       returnGetCurrentPrice();
       Loop = setInterval(returnGetCurrentPrice, 5000);
@@ -98,10 +99,10 @@ const debouncedValidate = useDebounce((()=>validateAndGetHistoricals(redirect, c
 const mapDispatchToProps = (dispatch) => ({
   
   clearSearchResults: () => dispatch(clear_search_results()),
-  validateAndGetHistoricals: (a, b) =>
-    dispatch(validate_and_get_historical_data(a, b)),
+  clearSelections: () => dispatch(clear_selections()),
+  validateAndGetHistoricals: (a, b) => dispatch(validate_and_get_historical_data(a, b)),
   getListOfAvailableCryptos: (x) => dispatch(getListOfAvailableCryptos(x)),
-  getCurrentCryptoPrice: (x, y) => dispatch(getCurrentCryptoPrice(x, y)),
+  getCurrentCryptoPrice: (x, y,z ) => dispatch(getCurrentCryptoPrice(x, y,z)),
 });
 
 const mapStateToProps = (state) => ({

@@ -25,8 +25,10 @@ const MyDialog = withStyles({
   },
 })(Dialog);
 
-const prepareErrorMessage = ({ error }) =>
-  error ? (
+const prepareErrorMessage = (props) =>{
+const {error} = props;
+
+ return error ? (
     <Link to="/" style={{ textDecoration: "none" }}>
       <MyDialog open={true}>
         <DialogTitle id="simple-dialog-title">UWAGA !!!</DialogTitle>
@@ -39,15 +41,16 @@ const prepareErrorMessage = ({ error }) =>
         </Grow>
       </MyDialog>
     </Link>
-  ) : null;
-
+  ) : <div>Error component called with falsey argument</div>;
+  }
 const mapStateToProps = (state) => ({
   error: state.error,
 });
 
-export const ErrorMessage = withRouter(
+ const ErrorMessage = withRouter(
   connect(mapStateToProps, null)(prepareErrorMessage)
 );
+export default ErrorMessage;
 
 prepareErrorMessage.propTypes ={
   error: PropTypes.object
