@@ -3,7 +3,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 import { Alert } from "@material-ui/lab";
 import { withStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
-import { hide_loaded_coins_msg } from "../js/ACTIONS/actions";
+import { hideLoadedCoinMessage } from "../redux/reducer&actions";
 import PropTypes from 'prop-types';
 
 const MyAlert = withStyles({
@@ -33,12 +33,12 @@ export const prepareLoadedCoinsMessage = (props) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  close: () => dispatch(hide_loaded_coins_msg()),
+  close: () => dispatch(hideLoadedCoinMessage()),
 });
 
 const mapStateToProps = (state) => ({
   open: state.isLoadedListOfAllCryptos,
-  count: [...state.list_of_all_cryptos].length,
+  count: [...state.listOfAllCryptos].length,
 });
 
 const LoadedCoinsMessage = connect(

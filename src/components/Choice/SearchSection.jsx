@@ -1,8 +1,6 @@
 import React from "react";
 import CryptoCurrencyChoice from "./CryptoCurrencyChoice";
-import { validate_and_get_historical_data } from "../../js/FUNCTIONS/validateAndGetHistoricalData";
-import getListOfAvailableCryptos from "../../js/FUNCTIONS/getListOfAvailableCryptos";
-import getCurrentCryptoPrice from "../../js/FUNCTIONS/getCurrentCryptoPrice";
+import {getCurrentCryptoPrice, getListOfAvailableCryptos, validateAndGetHistoricalData} from "../../redux/reducer&actions";
 import { Container, Button } from "../details";
 import FailedValidationAlert from "./FailedValidationAlert";
 import { useEffect } from "react";
@@ -11,13 +9,13 @@ import { connect } from "react-redux";
 import { BaseCurrencyChoice } from "./BaseCurrencyChoice";
 import { useHistory } from "react-router-dom";
 import LoadedCoinsMessage from "../LoadedCoinsMessage";
-import useDebounce from '../../js/FUNCTIONS/useDebounce';
+import useDebounce from '../../js/useDebounce';
 import PropTypes from 'prop-types';
 
 import {
  
-  clear_search_results, clear_selections,
-} from "../../js/ACTIONS/actions";
+  clearSearchResults, clearSelections,
+} from "../../redux/reducer&actions";
 
 var Loop;
 
@@ -67,8 +65,7 @@ const UnconnectedSearchSection = (props) => {
     return getCurrentCryptoPrice(searchResults, redirect, clearLoop);
   }
   
-const debouncedValidate = useDebounce((()=>validateAndGetHistoricals(redirect, clearLoop)),500);
-
+  const debouncedValidate = useDebounce((()=>validateAndGetHistoricals(redirect, clearLoop)),500);
 
   useEffect(() => {
     if (searchResults && searchResults.length) {
@@ -98,15 +95,15 @@ const debouncedValidate = useDebounce((()=>validateAndGetHistoricals(redirect, c
 
 const mapDispatchToProps = (dispatch) => ({
   
-  clearSearchResults: () => dispatch(clear_search_results()),
-  clearSelections: () => dispatch(clear_selections()),
-  validateAndGetHistoricals: (a, b) => dispatch(validate_and_get_historical_data(a, b)),
+  clearSearchResults: () => dispatch(clearSearchResults()),
+  clearSelections: () => dispatch(clearSelections()),
+  validateAndGetHistoricals: (a, b) => dispatch(validateAndGetHistoricalData(a, b)),
   getListOfAvailableCryptos: (x) => dispatch(getListOfAvailableCryptos(x)),
   getCurrentCryptoPrice: (x, y,z ) => dispatch(getCurrentCryptoPrice(x, y,z)),
 });
 
 const mapStateToProps = (state) => ({
-  searchResults: state.search_results,
+  searchResults: state.searchResults,
 });
 
 const SearchSection = withRouter(

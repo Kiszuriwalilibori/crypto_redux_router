@@ -8,8 +8,9 @@ import { connect } from "react-redux";
 import { CryptoCurrencyContainer, Button } from "../details";
 import CryptoCurrencyCurrentPrice from "./CryptoCurrencyCurrentPrice";
 import CryptoCurrencyHistoricalPrices from "./CryptoCurrencyHistoricalPrices";
+import PriceHasChangedSnackBar from "./PriceHasChangedSnackBar";
 import Grow from "@material-ui/core/Grow";
-//import useDebounce from '../../js/FUNCTIONS/useDebounce';
+import useDebounce from '../../js/useDebounce';
 import PropTypes from 'prop-types';
 
 const Controls = styled.div`
@@ -55,9 +56,11 @@ const CryptoCurrencyPricesContainer = styled.div`
 `;
 
 const PrepareResults = (props) => {
-  const { content, clearLoop } = props;
+  let { content, clearLoop } = props;
+  clearLoop = useDebounce(clearLoop, 300);
   return content ? (
     <React.Fragment>
+      <PriceHasChangedSnackBar />
       <Controls>
         <Link to="/" style={{ textDecoration: "none" }}>
           <Button onClick={clearLoop}>Powrót do wyboru</Button>
@@ -87,7 +90,6 @@ const mapStateToProps = (state) => ({
 
 const Results = withRouter(connect(mapStateToProps, null)(PrepareResults));
 export default Results;
-
 
 PrepareResults.propTypes ={
   content: PropTypes.number,

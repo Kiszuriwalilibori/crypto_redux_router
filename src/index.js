@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import reducer from "./js/REDUCERS/reducer";
+import reducer from "./redux/reducer&actions";
 import Axios from "axios";
 import App from "./components/App";
 import * as serviceWorker from "./js/serviceWorker";

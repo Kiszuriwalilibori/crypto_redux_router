@@ -21,14 +21,13 @@ const prepareFailedValidationAlert = ({visible, message})=> {
 }
   
 let mapStateToProps = (state) => ({  
-  visible: state.validation_alert_visibility,
+  visible: state.isValidationAlertVisibile,
   message:'Nie wybrano waluty, kryptowaluty albo obu',
 });
 
 const FailedValidationAlert = connect(mapStateToProps, null)(prepareFailedValidationAlert);
 export default FailedValidationAlert;
   
-
 prepareFailedValidationAlert.propTypes ={
   visible: PropTypes.bool,
   message: PropTypes.string

@@ -5,7 +5,9 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import {send_base_currency} from '../../js/ACTIONS/actions';
+//import {sendBaseCurrency} from '../../js/ACTIONS/actions';
+import {sendBaseCurrency} from '../../redux/reducer&actions';
+
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
@@ -29,7 +31,6 @@ const MyFormControl = withStyles({
 
 
   const prepareRadioButtonsGroup =(props)=> {
-  
   const{baseCurrency, sendBaseCurrency} = props;
   const handleChange = (event) => {sendBaseCurrency(event.target.value);};
 
@@ -46,11 +47,11 @@ const MyFormControl = withStyles({
 }
 
 const mapStateToProps = (state) => ({  
-baseCurrency: state.base_currency,
+baseCurrency: state.baseCurrency,
 });
 
 const  mapDispatchToProps = (dispatch) => ({
-  sendBaseCurrency: (data) => dispatch(send_base_currency(data)),
+  sendBaseCurrency: (data) => dispatch(sendBaseCurrency(data)),
 });
 
 export const BaseCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(prepareRadioButtonsGroup);

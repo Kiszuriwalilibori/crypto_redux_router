@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {send_selected_crypto} from '../../js/ACTIONS/actions';
+//import {sendSelectedCrypto} from '../../js/ACTIONS/actions';
+import {sendSelectedCrypto} from '../../redux/reducer&actions';
 import "react-virtualized-select/styles.css";
 import 'react-virtualized/styles.css'
 import 'react-virtualized-select/styles.css'
@@ -30,13 +31,13 @@ const prepareCryptoCurrencyChoice = (props)=>{
 }
 
 const mapStateToProps = (state) => ({
-    cryptos: state.list_of_all_cryptos,
-    selectedCrypto: state.selected_crypto,
+    cryptos: state.listOfAllCryptos,
+    selectedCrypto: state.selectedCrypto,
 
   });
 
 const  mapDispatchToProps = (dispatch) => ({
-    sendSelectedCrypto: (data) => dispatch(send_selected_crypto(data)),
+    sendSelectedCrypto: (data) => dispatch(sendSelectedCrypto(data)),
 });
 
 const CryptoCurrencyChoice = connect(mapStateToProps, mapDispatchToProps)(prepareCryptoCurrencyChoice);

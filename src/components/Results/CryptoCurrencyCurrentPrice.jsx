@@ -26,7 +26,7 @@ const prepareCryptoCurrencyCurrentPrice = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  currentPrice: state.first_content,
+  currentPrice: state.currentPrice,
 });
 
 const CryptoCurrencyCurrentPrice = connect(
